@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Tara | Graphic Design Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- خطوط -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;900&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; cursor: none; background-color: #030305; }
+        .arabic-font { font-family: 'Tajawal', sans-serif !important; }
+        
+        #custom-cursor {
+            pointer-events: none;
+            position: fixed; 
+            top: 0; left: 0; width: 35px; height: 35px;
+            border: 2px solid rgba(6, 182, 212, 0.8); 
+            background: rgba(6, 182, 212, 0.15);
+            border-radius: 50%; transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s;
+            transform: translate(-50%, -50%); z-index: 99999; box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        #cursor-text {
+            font-size: 9px; font-weight: 900; text-transform: uppercase;
+            letter-spacing: 1px; color: #030305; opacity: 0;
+            transition: opacity 0.2s ease; white-space: nowrap;
+        }
+
+        .safari-gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #cffafe 50%, #94a3b8 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            -webkit-box-decoration-break: clone; box-decoration-break: clone;
+            padding-bottom: 0.2em; padding-top: 0.1em; display: inline-block;
+        }
+
+        .slider-mask {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            cursor: none !important;
+            touch-action: pan-y;
+        }
+        .slider-mask:active {
+            cursor: none !important;
+        }
+        .slider-track {
+            display: flex;
+            height: 100%;
+            gap: 20px;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            user-select: none;
+        }
+        .slide-item {
+            flex: 0 0 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: none !important;
+        }
+        .slide-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .portfolio-card {
+            cursor: none !important;
+            border-width: 4px;
+            animation: cardLiveGlow 3.5s ease-in-out infinite;
+            position: relative;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-6px) scale(1.01);
+        }
+        .portfolio-card:hover .slide-item img {
+            transform: scale(1.04);
+        }
+
+        @keyframes cardLiveGlow {
+            0%, 100% {
+                border-color: rgba(6, 182, 212, 0.4);
+                box-shadow: 0 0 25px rgba(6, 182, 212, 0.2), inset 0 0 15px rgba(6, 182, 212, 0.08);
+            }
+            50% {
+                border-color: rgba(6, 182, 212, 1);
+                box-shadow: 0 0 50px rgba(6, 182, 212, 0.65), inset 0 0 35px rgba(6, 182, 212, 0.35);
+            }
+        }
+
+        @keyframes linePulse {
+            0%, 100% { stroke: rgba(6, 182, 212, 0.2); filter: drop-shadow(0 0 2px rgba(6,182,212,0.1)); }
+            50% { stroke: rgba(6, 182, 212, 0.9); filter: drop-shadow(0 0 12px rgba(6,182,212,0.6)); }
+        }
+        .spiral-path {
+            animation: linePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes moveDot {
+            0% { offset-distance: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { offset-distance: 100%; opacity: 0; }
+        }
+        .traveling-dot {
+            offset-path: path("M 0 50 C 180 10, 360 90, 540 50 C 720 10, 900 90, 1080 50 C 1200 30, 1320 70, 1440 50");
+            animation: moveDot 4s linear infinite;
+        }
+
+        @keyframes arrowGlow {
+            0%, 100% { filter: drop-shadow(0 0 4px rgba(6,182,212,0.3)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 12px rgba(6,182,212,0.8)); transform: scale(1.05); }
+        }
+        .spiral-arrow-container {
+            animation: arrowGlow 3s ease-in-out infinite;
+        }
+
+        .complete-macbook {
+            background: #12151c;
+            border: 3px solid #282d3d;
+            border-radius: 28px;
+            box-shadow: 0 0 50px rgba(6, 182, 212, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.9);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .complete-macbook:hover {
+            border-color: rgba(6, 182, 212, 0.85);
+            box-shadow: 0 0 75px rgba(6, 182, 212, 0.4), inset 0 0 20px rgba(6, 182, 212, 0.25);
+            transform: translateY(-5px) scale(1.01);
+        }
+
+        .macbook-base {
+            background: linear-gradient(to bottom, #181c25, #0d0f15);
+            border-top: 1px solid #2f3546;
+            padding: 12px 20px 16px 20px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            position: relative;
+        }
+
+        .macbook-keyboard {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0.85;
+        }
+        .keyboard-row {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+        }
+        .key {
+            background: #0a0c10;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            height: 10px;
+            border-radius: 3px;
+            flex: 1;
+            box-shadow: 0 0 5px rgba(6, 182, 212, 0.35);
+        }
+        .key.space {
+            flex: 6;
+        }
+
+        .macbook-trackpad {
+            width: 90px;
+            height: 22px;
+            background: #0a0c10;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            margin: 10px auto 0 auto;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .iphone-17-pro {
+            background: #111318;
+            border: 4px solid #2a2d38;
+            border-radius: 52px;
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.2), inset 0 0 12px rgba(0, 0, 0, 0.9), 0 20px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .iphone-17-pro:hover {
+            border-color: rgba(6, 182, 212, 0.9);
+            box-shadow: 0 0 65px rgba(6, 182, 212, 0.4), inset 0 0 15px rgba(6, 182, 212, 0.25);
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .ipad-mockup {
+            background: #111318;
+            border: 5px solid #2a2d38;
+            border-radius: 36px;
+            box-shadow: 0 0 50px rgba(6, 182, 212, 0.25), inset 0 0 15px rgba(0, 0, 0, 0.9);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .ipad-mockup:hover {
+            border-color: rgba(6, 182, 212, 0.9);
+            box-shadow: 0 0 75px rgba(6, 182, 212, 0.45), inset 0 0 20px rgba(6, 182, 212, 0.3);
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        #splash-screen {
+            position: fixed; inset: 0; background: #030305; z-index: 99998;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        @keyframes logoPulseAndGlow {
+            0% { transform: scale(0.85); opacity: 0.3; filter: drop-shadow(0 0 15px rgba(6,182,212,0.3)); }
+            50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 40px rgba(6,182,212,0.9)); }
+            100% { transform: scale(1); opacity: 0.95; filter: drop-shadow(0 0 25px rgba(6,182,212,0.6)); }
+        }
+        .splash-logo {
+            width: 150px; height: auto;
+            mix-blend-mode: screen; 
+            filter: contrast(120%);
+            animation: logoPulseAndGlow 2s ease-in-out infinite alternate;
+        }
+
+        #space-bg {
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, rgba(6,182,212,0.8), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 180px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 300px 250px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 380px 320px, rgba(6,182,212,0.9), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            animation: moveStars 35s linear infinite;
+        }
+        @keyframes moveStars {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 0px 400px; }
+        }
+
+        /* شريط الخدمات المتحرك اللانهائي المعدل بدون فراغات */
+        @keyframes marqueeLtr {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeRtl {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+        }
+        html[dir="ltr"] .animate-marquee {
+            animation: marqueeLtr 25s linear infinite;
+        }
+        html[dir="rtl"] .animate-marquee {
+            animation: marqueeRtl 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="text-white selection:bg-cyan-500 selection:text-black overflow-x-hidden relative">
+
+    <div id="splash-screen">
+        <img src="images/logo.PNG" alt="Tara Graphix Logo" class="splash-logo mb-6 object-contain">
+        <h1 class="text-xl md:text-2xl font-black tracking-[0.3em] bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-500 bg-clip-text text-transparent uppercase opacity-90 animate-pulse">TARA.GRAPHIX</h1>
+    </div>
+
+    <div id="custom-cursor"><span id="cursor-text">VIEW</span></div>
+
+    <div id="space-bg" class="fixed inset-0 z-[-1] overflow-hidden bg-[#030305]">
+        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-950/20 via-transparent to-indigo-950/20 opacity-60"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-16 py-6 backdrop-blur-xl bg-[#030305]/80 border-b border-white/5">
+        <div id="interactive-logo" class="text-xl font-black tracking-widest bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-500 bg-clip-text text-transparent cursor-pointer inline-block">TARA.GRAPHIX</div>
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex gap-8 text-sm text-slate-400">
+                <a href="#" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="#portfolio" class="hover:text-cyan-400 transition-colors" data-en="Portfolio" data-ar="المعرض">Portfolio</a>
+                <a href="#reels" class="hover:text-cyan-400 transition-colors" data-en="Reels" data-ar="الريلز">Reels</a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors" data-en="About" data-ar="عني">About</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors" data-en="Contact" data-ar="تواصل">Contact</a>
+            </div>
+            <button onclick="toggleLanguage()" id="lang-btn" class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold px-4 py-2 rounded-xl transition-all text-xs tracking-wider cursor-pointer">العربية 🇮🇶</button>
+        </div>
+    </nav>
+
+    <section class="min-h-[85vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 pt-36 pb-12 relative z-10 max-w-7xl mx-auto gap-12">
+        <div class="w-full lg:w-1/2 flex flex-col items-start text-left rtl:text-right space-y-6">
+            <div class="flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 opacity-0" id="avail-badge">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold" data-en="Available for new projects" data-ar="متاحة لشغل مشاريع جديدة">Available for new projects</span>
+            </div>
+
+            <span class="px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-bold opacity-0 tracking-widest shadow-lg shadow-cyan-500/10" id="hero-tag" data-en="HI THERE, I'M TARA 👋" data-ar="هلو، وياكم تارا 👋">HI THERE, I'M TARA 👋</span>
+            
+            <h1 id="main-title" class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight opacity-0 leading-[1.35] rtl:leading-[1.6] safari-gradient-text" data-en="Designs That Make Brands Stand Out" data-ar="تصاميم تخلي البراند مالتك يبرز ويثبت بالذاكرة">Designs That Make Brands Stand Out</h1>
+            
+            <p id="main-desc" class="text-base md:text-lg text-slate-400 max-w-lg opacity-0 font-light leading-relaxed" data-en="I create bold social media designs, visual identities, and creative campaigns that help brands stand out." data-ar="أصمم بوستات سوشيال ميديا جريئة، هويات بصرية، وحملات إبداعية تساعد البراندات تترك بصمة قوية.">I create bold social media designs, visual identities, and creative campaigns that help brands stand out.</p>
+            
+            <div class="flex gap-6 opacity-0 pt-4" id="main-btns">
+                <a href="#portfolio" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-2xl shadow-cyan-500/30 transition-all duration-300 hover:scale-105" data-en="View Works" data-ar="شاهد الأعمال">View Works</a>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 opacity-0 transition-transform duration-500" id="hero-screen-box">
+            <div class="complete-macbook p-3.5 md:p-5">
+                <div class="relative bg-black rounded-2xl overflow-hidden aspect-video flex items-center justify-center pt-7 border border-white/10 shadow-inner">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-[#0d0f15] rounded-b-md z-30 flex items-center justify-center gap-1">
+                        <div class="w-1 h-1 rounded-full bg-cyan-950 border border-white/10"></div>
+                    </div>
+                    <img src="images/first.jpg" alt="MacBook Screen" class="w-full h-full object-cover">
+                </div>
+                <div class="macbook-base mt-3">
+                    <div class="macbook-keyboard">
+                        <div class="keyboard-row">
+                            <div class="key" style="flex: 0.8;"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key" style="flex: 0.8;"></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key" style="flex: 1.2;"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key" style="flex: 1.2;"></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key" style="flex: 1.5;"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key" style="flex: 1.5;"></div>
+                        </div>
+                        <div class="keyboard-row">
+                            <div class="key" style="flex: 1.2;"></div><div class="key" style="flex: 1.2;"></div><div class="key" style="flex: 1.2;"></div><div class="key space"></div><div class="key" style="flex: 1.2;"></div><div class="key" style="flex: 1.2;"></div>
+                        </div>
+                    </div>
+                    <div class="macbook-trackpad"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- شريط الخدمات المتحرك الفاصل بين القسم الأول والمعرض -->
+    <div class="w-full py-8 md:py-10 bg-[#030305]/80 backdrop-blur-md border-y border-white/5 overflow-hidden flex whitespace-nowrap relative z-10">
+        <div class="animate-marquee flex gap-8 md:gap-16 items-center">
+            <!-- المجموعة الأولى -->
+            <span class="text-xl md:text-3xl font-black text-slate-400 uppercase tracking-widest" data-en="SOCIAL MEDIA POSTS" data-ar="بوستات سوشيال ميديا">SOCIAL MEDIA POSTS</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-500 uppercase tracking-widest" data-en="VISUAL IDENTITY" data-ar="هوية بصرية">VISUAL IDENTITY</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-400 uppercase tracking-widest" data-en="CREATIVE CAMPAIGNS" data-ar="حملات إبداعية">CREATIVE CAMPAIGNS</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-500 uppercase tracking-widest" data-en="BRANDING & DESIGN" data-ar="تصميم وبناء البراندات">BRANDING & DESIGN</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-400 uppercase tracking-widest" data-en="MOTION & REELS" data-ar="موشن وريلز">MOTION & REELS</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+
+            <!-- المجموعة الثانية (لضمان الاستمرارية اللانهائية) -->
+            <span class="text-xl md:text-3xl font-black text-slate-400 uppercase tracking-widest" data-en="SOCIAL MEDIA POSTS" data-ar="بوستات سوشيال ميديا">SOCIAL MEDIA POSTS</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-500 uppercase tracking-widest" data-en="VISUAL IDENTITY" data-ar="هوية بصرية">VISUAL IDENTITY</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-400 uppercase tracking-widest" data-en="CREATIVE CAMPAIGNS" data-ar="حملات إبداعية">CREATIVE CAMPAIGNS</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-500 uppercase tracking-widest" data-en="BRANDING & DESIGN" data-ar="تصميم وبناء البراندات">BRANDING & DESIGN</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+            <span class="text-xl md:text-3xl font-black text-slate-400 uppercase tracking-widest" data-en="MOTION & REELS" data-ar="موشن وريلز">MOTION & REELS</span>
+            <span class="text-cyan-400 text-xl md:text-2xl animate-pulse">✦</span>
+        </div>
+    </div>
+
+    <!-- قسم المعرض الأساسي (Portfolio) -->
+    <section id="portfolio" class="py-32 px-6 md:px-16 max-w-7xl mx-auto relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-white/10 pb-8 portfolio-header-anim opacity-0 translate-y-12 transition-all duration-1000">
+            <div>
+                <span class="text-cyan-400 text-xs font-black tracking-[0.25em] uppercase block mb-3 bg-cyan-500/10 border border-cyan-500/30 px-4 py-1.5 rounded-full w-max shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:scale-105 transition-transform duration-300" data-en="SELECTED WORKS" data-ar="أبرز الأعمال">SELECTED WORKS</span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight safari-gradient-text hover:text-cyan-300 transition-colors duration-300" data-en="Crafted with passion & precision." data-ar="شغل مصمم بحب ودقة عالية.">Crafted with passion & precision.</h2>
+            </div>
+            <p class="text-slate-400 text-sm mt-4 md:mt-0 max-w-xs font-light border-l-2 border-cyan-500/50 pl-4 rtl:border-r-2 rtl:border-l-0 rtl:pr-4 rtl:pl-0" data-en="A glimpse of my recent social media campaigns and creative posts." data-ar="لمحة من أحدث حملات السوشيال ميديا والبوستات الإبداعية.">A glimpse of my recent social media campaigns and creative posts.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- الكارت الأول: Solar Energy -->
+            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+                <div class="slider-mask" id="brand-mask">
+                    <div id="brand-slider" class="slider-track">
+                        <div class="slide-item"><img src="images/image1.g1.png" alt="G1-1"></div>
+                        <div class="slide-item"><img src="images/image2.g1.png" alt="G1-2"></div>
+                        <div class="slide-item"><img src="images/image3.g1.png" alt="G1-3"></div>
+                        <div class="slide-item"><img src="images/image4.g1.png" alt="G1-4"></div>
+                        <div class="slide-item"><img src="images/image5.g1.png" alt="G1-5"></div>
+                        <div class="slide-item"><img src="images/image6.g1.png" alt="G1-6"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="brand-dots"></div>
+
+                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
+                    <button onclick="prevBrandSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button onclick="nextBrandSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                    <div class="pointer-events-auto">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Solar Energy" data-ar="طاقة شمسية">Solar Energy</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الكارت الثاني: Auditing & Financial Consulting -->
+            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+                <div class="slider-mask" id="social-mask">
+                    <div id="social-slider" class="slider-track">
+                        <div class="slide-item"><img src="images/image1.g2.png" alt="G2-1"></div>
+                        <div class="slide-item"><img src="images/image2.g2.png" alt="G2-2"></div>
+                        <div class="slide-item"><img src="images/image3.g2.png" alt="G2-3"></div>
+                        <div class="slide-item"><img src="images/image4.g2.png" alt="G2-4"></div>
+                        <div class="slide-item"><img src="images/image5.g2.png" alt="G2-5"></div>
+                        <div class="slide-item"><img src="images/image6.g2.png" alt="G2-6"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="social-dots"></div>
+
+                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
+                    <button onclick="prevSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button onclick="nextSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                    <div class="pointer-events-auto">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Auditing & Financial Consulting" data-ar="تدقيق واستشارات مالية">Auditing & Financial Consulting</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الكارت الثالث: Tech Production -->
+            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+                <div class="slider-mask" id="creative-mask">
+                    <div id="creative-slider" class="slider-track">
+                        <div class="slide-item"><img src="images/image1.g3.png" alt="G3-1"></div>
+                        <div class="slide-item"><img src="images/image2.g3.png" alt="G3-2"></div>
+                        <div class="slide-item"><img src="images/image3.g3.png" alt="G3-3"></div>
+                        <div class="slide-item"><img src="images/image4.g3.png" alt="G3-4"></div>
+                        <div class="slide-item"><img src="images/image5.g3.png" alt="G3-5"></div>
+                        <div class="slide-item"><img src="images/image6.g3.png" alt="G3-6"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="creative-dots"></div>
+
+                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
+                    <button onclick="prevCreativeSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button onclick="nextCreativeSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                    <div class="pointer-events-auto">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Tech Production" data-ar="إنتاج تقني">Tech Production</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الكارت الرابع: Food & Beverage -->
+            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+                <div class="slider-mask" id="ads-mask">
+                    <div id="ads-slider" class="slider-track">
+                        <div class="slide-item"><img src="images/image1.g4.png" alt="G4-1"></div>
+                        <div class="slide-item"><img src="images/image2.g4.png" alt="G4-2"></div>
+                        <div class="slide-item"><img src="images/image3.g4.png" alt="G4-3"></div>
+                        <div class="slide-item"><img src="images/image4.g4.png" alt="G4-4"></div>
+                        <div class="slide-item"><img src="images/image5.g4.png" alt="G4-5"></div>
+                        <div class="slide-item"><img src="images/image6.g4.png" alt="G4-6"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="ads-dots"></div>
+
+                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
+                    <button onclick="prevAdsSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button onclick="nextAdsSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                    <div class="pointer-events-auto">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Food & Beverage" data-ar="أغذية ومشروبات">Food & Beverage</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الكارت الخامس: Media Production -->
+            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+                <div class="slider-mask" id="extra1-mask">
+                    <div id="extra1-slider" class="slider-track" style="--total-slides: 7;">
+                        <div class="slide-item"><img src="images/image1.g5.png" alt="G5-1"></div>
+                        <div class="slide-item"><img src="images/image2.g5.png" alt="G5-2"></div>
+                        <div class="slide-item"><img src="images/image3.g5.png" alt="G5-3"></div>
+                        <div class="slide-item"><img src="images/image4.g5.png" alt="G5-4"></div>
+                        <div class="slide-item"><img src="images/image5.g5.png" alt="G5-5"></div>
+                        <div class="slide-item"><img src="images/image6.g5.png" alt="G5-6"></div>
+                        <div class="slide-item"><img src="images/image7.g5.png" alt="G5-7"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="extra1-dots"></div>
+
+                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
+                    <button onclick="prevExtra1Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button onclick="nextExtra1Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                    <div class="pointer-events-auto">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Media Production" data-ar="إنتاج إعلامي">Media Production</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الكارت السادس: Dental Clinic -->
+            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+                <div class="slider-mask" id="extra2-mask">
+                    <div id="extra2-slider" class="slider-track">
+                        <div class="slide-item"><img src="images/image1.g6.png" alt="G6-1"></div>
+                        <div class="slide-item"><img src="images/image2.g6.png" alt="G6-2"></div>
+                        <div class="slide-item"><img src="images/image3.g6.png" alt="G6-3"></div>
+                        <div class="slide-item"><img src="images/image4.g6.png" alt="G6-4"></div>
+                        <div class="slide-item"><img src="images/image5.g6.png" alt="G6-5"></div>
+                        <div class="slide-item"><img src="images/image6.g6.png" alt="G6-6"></div>
+                    </div>
+                </div>
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
+
+                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="extra2-dots"></div>
+
+                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
+                    <button onclick="prevExtra2Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button onclick="nextExtra2Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
+
+                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                    <div class="pointer-events-auto">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Dental Clinic" data-ar="عيادة أسنان">Dental Clinic</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full py-20 flex justify-center items-center relative overflow-hidden z-10">
+        <svg class="w-full h-32 overflow-visible" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="spiral-path" d="M 0 50 C 180 10, 360 90, 540 50 C 720 10, 900 90, 1080 50 C 1200 30, 1320 70, 1440 50" stroke-width="2.5" fill="none"/>
+            <circle class="traveling-dot" r="4" fill="#ffffff" filter="drop-shadow(0 0 8px rgba(255,255,255,0.9))" />
+        </svg>
+    </div>
+
+    <!-- قسم الريلز -->
+    <section id="reels" class="py-24 px-6 md:px-16 max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase block mb-2" data-en="FEATURED SOCIAL MEDIA REELS" data-ar="أبرز ريلز السوشيال ميديا">FEATURED SOCIAL MEDIA REELS</span>
+            <h2 class="text-3xl md:text-5xl font-black tracking-tight" data-en="Campaigns in Motion." data-ar="حملات تنبض بالحركة.">Campaigns in Motion.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center">
+            <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto">
+                <div class="relative bg-black rounded-[42px] overflow-hidden aspect-[9/19.5] flex items-center justify-center">
+                    <div class="absolute top-3.5 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#050608] rounded-full z-20 flex items-center justify-between px-2.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
+                        <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
+                    </div>
+                    <video src="images2/reel1.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                </div>
+            </div>
+            <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto md:-translate-y-6">
+                <div class="relative bg-black rounded-[42px] overflow-hidden aspect-[9/19.5] flex items-center justify-center">
+                    <div class="absolute top-3.5 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#050608] rounded-full z-20 flex items-center justify-between px-2.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
+                        <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
+                    </div>
+                    <video src="images2/reel2.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                </div>
+            </div>
+            <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto">
+                <div class="relative bg-black rounded-[42px] overflow-hidden aspect-[9/19.5] flex items-center justify-center">
+                    <div class="absolute top-3.5 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#050608] rounded-full z-20 flex items-center justify-between px-2.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
+                        <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
+                    </div>
+                    <video src="images2/reel3.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full py-16 flex justify-center items-center relative overflow-hidden z-10">
+        <svg class="w-full h-32 overflow-visible" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="spiral-path" d="M 0 50 C 180 10, 360 90, 540 50 C 720 10, 900 90, 1080 50 C 1200 30, 1320 70, 1440 50" stroke-width="2.5" fill="none"/>
+            <circle class="traveling-dot" r="4" fill="#ffffff" filter="drop-shadow(0 0 8px rgba(255,255,255,0.9))" />
+        </svg>
+    </div>
+
+    <!-- قسم About Me -->
+    <section id="about" class="py-24 px-6 md:px-16 max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6 text-left rtl:text-right">
+                <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase block" data-en="ABOUT ME" data-ar="نبذة عني">ABOUT ME</span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight" data-en="I’m Tara, turning ideas into impactful visuals." data-ar="أني تارا، أحول الأفكار إلى تصاميم مؤثرة.">I’m Tara, turning ideas into impactful visuals.</h2>
+                <p class="text-slate-400 text-base md:text-lg font-light leading-relaxed" data-en="A Computer Science graduate with a passion for creative and modern design." data-ar="خريجة علوم حاسبات، وعندي شغف كبير بالتصميم الإبداعي والمعاصر.">A Computer Science graduate with a passion for creative and modern design.</p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+                    <div class="bg-[#090a10] border border-white/10 p-3.5 rounded-2xl text-center hover:border-cyan-500/50 transition-all">
+                        <span class="text-sm font-bold text-white block" data-en="Social Media" data-ar="سوشيال ميديا">Social Media</span>
+                    </div>
+                    <div class="bg-[#090a10] border border-white/10 p-3.5 rounded-2xl text-center hover:border-cyan-500/50 transition-all">
+                        <span class="text-sm font-bold text-white block" data-en="Visual Design" data-ar="تصميم بصري">Visual Design</span>
+                    </div>
+                    <div class="bg-[#090a10] border border-white/10 p-3.5 rounded-2xl text-center hover:border-cyan-500/50 transition-all">
+                        <span class="text-sm font-bold text-white block" data-en="Content Design" data-ar="تصميم المحتوى">Content Design</span>
+                    </div>
+                    <div class="bg-[#090a10] border border-white/10 p-3.5 rounded-2xl text-center hover:border-cyan-500/50 transition-all">
+                        <span class="text-sm font-bold text-white block" data-en="Creative AI" data-ar="الذكاء الاصطناعي">Creative AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full flex justify-center">
+                <div class="ipad-mockup p-4 w-full max-w-[420px]">
+                    <div class="relative bg-black rounded-[26px] overflow-hidden aspect-[4/3] flex items-center justify-center">
+                        <img src="images/about.PNG" alt="Tara Photo" class="w-full h-full object-cover">
+                        <div class="absolute bottom-3 left-3 right-3 bg-black/70 backdrop-blur-md py-1.5 px-3 rounded-xl border border-white/10 text-center">
+                            <span class="text-xs font-bold text-cyan-400" data-en="Duhok, Iraq 🇮🇶" data-ar="دهوك، العراق 🇮🇶">Duhok, Iraq 🇮🇶</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full py-16 flex justify-center items-center relative overflow-hidden z-10">
+        <svg class="w-full h-32 overflow-visible" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="spiral-path" d="M 0 50 C 180 10, 360 90, 540 50 C 720 10, 900 90, 1080 50 C 1200 30, 1320 70, 1440 50" stroke-width="2.5" fill="none"/>
+            <circle class="traveling-dot" r="4" fill="#ffffff" filter="drop-shadow(0 0 8px rgba(255,255,255,0.9))" />
+        </svg>
+    </div>
+
+    <!-- الفوتر -->
+    <footer id="contact" class="py-24 px-6 md:px-16 max-w-5xl mx-auto text-center relative z-10">
+        <div class="bg-gradient-to-b from-[#090a10] to-[#040508] border border-cyan-500/30 rounded-[40px] p-12 md:p-16 shadow-[0_0_60px_rgba(6,182,212,0.12)] backdrop-blur-xl">
+            <span class="text-cyan-400 text-xs font-bold tracking-widest uppercase block mb-3" data-en="LET'S WORK TOGETHER" data-ar="خلي نشتغل سوة">LET'S WORK TOGETHER</span>
+            <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6 safari-gradient-text" data-en="Let's build something iconic together." data-ar="خلي نبتكر شي أسطوري سوة.">Let's build something iconic together.</h2>
+            <p class="text-slate-400 text-sm md:text-base max-w-lg mx-auto font-light mb-8" data-en="Have a project in mind or want to elevate your brand presence? Let's connect and bring your vision to life." data-ar="عندك مشروع ببالك لو تريد ترفع مستوى هويتك البصرية؟ تواصل وياي وخلي نحول فكرتك إلى حقيقة.">Have a project in mind or want to elevate your brand presence? Let's connect and bring your vision to life.</p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-6">
+                <!-- زر الإنستغرام الآمن -->
+                <a href="https://instagram.com/taragraphix" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black px-7 py-4 rounded-2xl shadow-2xl shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <div class="flex flex-col text-left rtl:text-right">
+                        <span class="text-xs font-bold leading-tight" data-en="Connect on Instagram" data-ar="تواصل عبر الإنستغرام">Connect on Instagram</span>
+                        <span class="text-[11px] font-mono opacity-90 leading-tight">@taragraphix</span>
+                    </div>
+                </a>
+
+                <!-- زر الواتساب الآمن -->
+                <a href="https://wa.me/9647518167235?text=Hi%20Tara,%20I'm%20interested%20in%20your%20design%20services!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-emerald-500/10 hover:bg-emerald-500 text-emerald-400 hover:text-slate-950 border border-emerald-500/30 font-black px-7 py-4 rounded-2xl shadow-2xl shadow-emerald-500/10 transition-all duration-300 hover:scale-105">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    <div class="flex flex-col text-left rtl:text-right">
+                        <span class="text-xs font-bold leading-tight" data-en="Chat on WhatsApp" data-ar="تواصل عبر الواتساب">Chat on WhatsApp</span>
+                        <span class="text-[11px] font-mono opacity-90 leading-tight">+964 751 816 7235</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-mono">
+            <span>© 2026 TARA.GRAPHIX. All rights reserved.</span>
+            <span class="mt-2 md:mt-0 text-cyan-400/80" data-en="Designed with passion & precision" data-ar="مصمم بشغف ودقة عالية">Designed with passion & precision</span>
+        </div>
+    </footer>
+
+    <!-- السكريبتات -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                splash.style.opacity = '0';
+                splash.style.visibility = 'hidden';
+            }, 2500);
+        });
+
+        let currentLang = 'en';
+        function toggleLanguage() {
+            const htmlRoot = document.getElementById('html-root');
+            const langBtn = document.getElementById('lang-btn');
+            if (currentLang === 'en') { 
+                currentLang = 'ar'; 
+                htmlRoot.setAttribute('lang', 'ar'); 
+                htmlRoot.setAttribute('dir', 'rtl'); 
+                document.body.classList.add('arabic-font'); 
+                langBtn.innerHTML = 'English 🇺🇸'; 
+            } else { 
+                currentLang = 'en'; 
+                htmlRoot.setAttribute('lang', 'en'); 
+                htmlRoot.setAttribute('dir', 'ltr'); 
+                document.body.classList.remove('arabic-font'); 
+                langBtn.innerHTML = 'العربية 🇮🇶'; 
+            }
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const val = el.getAttribute(`data-${currentLang}`);
+                if (val !== null) el.innerText = val;
+            });
+
+            updateBrandSlider();
+            updateSlider();
+            updateCreativeSlider();
+            updateAdsSlider();
+            updateExtra1Slider();
+            updateExtra2Slider();
+        }
+
+        function initDots(dotsId, total) {
+            const container = document.getElementById(dotsId);
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 0; i < total; i++) {
+                const dot = document.createElement('div');
+                dot.className = `h-1.5 rounded-full transition-all duration-300 ${i === 0 ? 'w-5 bg-cyan-400' : 'w-1.5 bg-white/40'}`;
+                container.appendChild(dot);
+            }
+        }
+
+        function updateDots(dotsId, index) {
+            const container = document.getElementById(dotsId);
+            if (!container) return;
+            const dots = container.children;
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = `h-1.5 rounded-full transition-all duration-300 ${i === index ? 'w-5 bg-cyan-400' : 'w-1.5 bg-white/40'}`;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initDots('brand-dots', 6);
+            initDots('social-dots', 6);
+            initDots('creative-dots', 6);
+            initDots('ads-dots', 6);
+            initDots('extra1-dots', 7);
+            initDots('extra2-dots', 6);
+
+            gsap.to(".portfolio-header-anim", {
+                scrollTrigger: {
+                    trigger: "#portfolio",
+                    start: "top 85%",
+                },
+                opacity: 1,
+                y: 0,
+                stagger: 0.2,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        let currentBrandSlideIndex = 0;
+        const totalBrandSlides = 6;
+        function nextBrandSlide() { currentBrandSlideIndex = (currentBrandSlideIndex + 1) % totalBrandSlides; updateBrandSlider(); }
+        function prevBrandSlide() { currentBrandSlideIndex = (currentBrandSlideIndex - 1 + totalBrandSlides) % totalBrandSlides; updateBrandSlider(); }
+        function updateBrandSlider() {
+            const slider = document.getElementById('brand-slider');
+            if (slider) {
+                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * currentBrandSlideIndex * -100}% - ${direction * currentBrandSlideIndex * 20}px))`;
+                updateDots('brand-dots', currentBrandSlideIndex);
+            }
+        }
+
+        let currentSlideIndex = 0;
+        const totalSlides = 6;
+        function nextSlide() { currentSlideIndex = (currentSlideIndex + 1) % totalSlides; updateSlider(); }
+        function prevSlide() { currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides; updateSlider(); }
+        function updateSlider() {
+            const slider = document.getElementById('social-slider');
+            if (slider) {
+                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * currentSlideIndex * -100}% - ${direction * currentSlideIndex * 20}px))`;
+                updateDots('social-dots', currentSlideIndex);
+            }
+        }
+
+        let currentCreativeIndex = 0;
+        const totalCreativeSlides = 6;
+        function nextCreativeSlide() { currentCreativeIndex = (currentCreativeIndex + 1) % totalCreativeSlides; updateCreativeSlider(); }
+        function prevCreativeSlide() { currentCreativeIndex = (currentCreativeIndex - 1 + totalCreativeSlides) % totalCreativeSlides; updateCreativeSlider(); }
+        function updateCreativeSlider() {
+            const slider = document.getElementById('creative-slider');
+            if (slider) {
+                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * currentCreativeIndex * -100}% - ${direction * currentCreativeIndex * 20}px))`;
+                updateDots('creative-dots', currentCreativeIndex);
+            }
+        }
+
+        let currentAdsIndex = 0;
+        const totalAdsSlides = 6;
+        function nextAdsSlide() { currentAdsIndex = (currentAdsIndex + 1) % totalAdsSlides; updateAdsSlider(); }
+        function prevAdsSlide() { currentAdsIndex = (currentAdsIndex - 1 + totalAdsSlides) % totalAdsSlides; updateAdsSlider(); }
+        function updateAdsSlider() {
+            const slider = document.getElementById('ads-slider');
+            if (slider) {
+                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * currentAdsIndex * -100}% - ${direction * currentAdsIndex * 20}px))`;
+                updateDots('ads-dots', currentAdsIndex);
+            }
+        }
+
+        let currentExtra1Index = 0;
+        const totalExtra1Slides = 7;
+        function nextExtra1Slide() { currentExtra1Index = (currentExtra1Index + 1) % totalExtra1Slides; updateExtra1Slider(); }
+        function prevExtra1Slide() { currentExtra1Index = (currentExtra1Index - 1 + totalExtra1Slides) % totalExtra1Slides; updateExtra1Slider(); }
+        function updateExtra1Slider() {
+            const slider = document.getElementById('extra1-slider');
+            if (slider) {
+                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * currentExtra1Index * -100}% - ${direction * currentExtra1Index * 20}px))`;
+                updateDots('extra1-dots', currentExtra1Index);
+            }
+        }
+
+        let currentExtra2Index = 0;
+        const totalExtra2Slides = 6;
+        function nextExtra2Slide() { currentExtra2Index = (currentExtra2Index + 1) % totalExtra2Slides; updateExtra2Slider(); }
+        function prevExtra2Slide() { currentExtra2Index = (currentExtra2Index - 1 + totalExtra2Slides) % totalExtra2Slides; updateExtra2Slider(); }
+        function updateExtra2Slider() {
+            const slider = document.getElementById('extra2-slider');
+            if (slider) {
+                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * currentExtra2Index * -100}% - ${direction * currentExtra2Index * 20}px))`;
+                updateDots('extra2-dots', currentExtra2Index);
+            }
+        }
+
+        function setupSwipe(maskId, nextFn, prevFn) {
+            const mask = document.getElementById(maskId);
+            if (!mask) return;
+            let startX = 0, isDragging = false;
+            mask.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
+            mask.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                let diff = startX - e.changedTouches[0].clientX;
+                const isRtl = document.getElementById('html-root').getAttribute('dir') === 'rtl';
+                if (isRtl) diff = -diff;
+                if (diff > 40) nextFn(); else if (diff < -40) prevFn();
+                isDragging = false;
+            }, { passive: true });
+            mask.addEventListener('mousedown', (e) => { startX = e.clientX; isDragging = true; });
+            mask.addEventListener('mouseup', (e) => {
+                if (!isDragging) return;
+                let diff = startX - e.clientX;
+                const isRtl = document.getElementById('html-root').getAttribute('dir') === 'rtl';
+                if (isRtl) diff = -diff;
+                if (diff > 40) nextFn(); else if (diff < -40) prevFn();
+                isDragging = false;
+            });
+            mask.addEventListener('mouseleave', () => { isDragging = false; });
+        }
+
+        setupSwipe('brand-mask', nextBrandSlide, prevBrandSlide);
+        setupSwipe('social-mask', nextSlide, prevSlide);
+        setupSwipe('creative-mask', nextCreativeSlide, prevCreativeSlide);
+        setupSwipe('ads-mask', nextAdsSlide, prevAdsSlide);
+        setupSwipe('extra1-mask', nextExtra1Slide, prevExtra1Slide);
+        setupSwipe('extra2-mask', nextExtra2Slide, prevExtra2Slide);
+
+        const cursor = document.getElementById('custom-cursor');
+        const cursorText = document.getElementById('cursor-text');
+
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+
+            const logo = document.getElementById('interactive-logo');
+            if (logo) {
+                const xPos = (e.clientX / window.innerWidth - 0.5) * 15;
+                const yPos = (e.clientY / window.innerHeight - 0.5) * 15;
+                gsap.to(logo, { x: xPos, y: yPos, duration: 0.5, ease: "power2.out" });
+            }
+        });
+
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                cursor.style.width = '75px';
+                cursor.style.height = '75px';
+                cursor.style.background = '#06b6d4';
+                cursor.style.borderColor = '#06b6d4';
+                cursorText.style.opacity = '1';
+                cursorText.innerText = currentLang === 'ar' ? 'عرض' : 'VIEW';
+            });
+            card.addEventListener('mouseleave', () => {
+                cursor.style.width = '35px';
+                cursor.style.height = '35px';
+                cursor.style.background = 'rgba(6, 182, 212, 0.15)';
+                cursor.style.borderColor = 'rgba(6, 182, 212, 0.8)';
+                cursorText.style.opacity = '0';
+            });
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const tl = gsap.timeline();
+            tl.to("#avail-badge", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "+=2.0")
+              .to("#hero-tag", { opacity: 1, y: 0, duration: 0.8, ease: "power3.0" }, "-=0.4")
+              .to("#main-title", { opacity: 1, y: -10, duration: 1.2, ease: "power3.out" }, "-=0.4")
+              .to("#main-desc", { opacity: 1, y: 0, duration: 1, ease: "power3.0" }, "-=0.7")
+              .to("#hero-screen-box", { 
+                  opacity: 1, 
+                  scale: 1, 
+                  duration: 1.2, 
+                  ease: "power3.out",
+                  onComplete: () => {
+                      gsap.to("#hero-screen-box", { y: -10, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
+                  }
+              }, "-=0.7")
+              .to("#main-btns", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.7");
+        });
+    </script>
+</body>
+</html>
