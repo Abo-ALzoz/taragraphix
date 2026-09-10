@@ -5,15 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Tara | Graphic Design Portfolio</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="assets/vendor/tailwind-3.4.17-176e894661aa.js" integrity="sha384-igm5BeiBt36UU4gqwWS7imYmelpTsZlQ45FZf+XBn9MuJbn4nQr7yx1yFydocC/K" crossorigin="anonymous"></script>
     <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="assets/vendor/gsap.min-3.12.2-efc85c7eb141.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+    <script defer src="assets/vendor/ScrollTrigger.min-3.12.2-65f6c13748b0.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
     <!-- خطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;900&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; cursor: none; background-color: #030305; }
-        .arabic-font { font-family: 'Tajawal', sans-serif !important; }
+        body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #030305; color: #fff; }
+        .arabic-font { font-family: 'Tajawal', 'Geeza Pro', 'Noto Sans Arabic', Tahoma, Arial, sans-serif !important; }
+        section[id], footer[id] { scroll-margin-top: 112px; }
+        @media (max-width: 767px) {
+            #contact > div:first-child { padding: clamp(24px, 6.25vw, 48px); }
+        }
+
+        #nav-menu { display: flex; }
+        #nav-menu-toggle { display: none; }
+        @media (max-width: 1023px) {
+            #tara-navbar { padding-inline: 16px; gap: 12px; }
+            #interactive-logo { font-size: clamp(14px, 4vw, 20px); white-space: nowrap; }
+            #tara-navbar .nav-actions { gap: 8px; flex-shrink: 0; }
+            #lang-btn { padding-inline: 8px; white-space: nowrap; letter-spacing: normal; }
+            #nav-menu-toggle {
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                gap: 5px; width: 44px; height: 44px; padding: 0; flex-shrink: 0;
+                border: 1px solid rgba(6, 182, 212, .3); border-radius: 12px;
+                background: rgba(6, 182, 212, .1); color: #22d3ee; cursor: pointer;
+            }
+            #nav-menu-toggle span { width: 20px; height: 2px; background: currentColor; transition: transform .2s, opacity .2s; }
+            #nav-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            #nav-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+            #nav-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            #nav-menu {
+                position: absolute; top: 100%; inset-inline: 16px;
+                flex-direction: column; gap: 4px; padding: 12px;
+                max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px); overflow-y: auto;
+                background: #090a10; border: 1px solid rgba(6, 182, 212, .2); border-radius: 16px;
+                opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+                transition: opacity .2s, transform .2s, visibility .2s;
+            }
+            #nav-menu.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+            #nav-menu a { display: block; padding: 12px; min-height: 44px; }
+        }
         
         #custom-cursor {
             pointer-events: none;
@@ -23,7 +58,12 @@
             background: rgba(6, 182, 212, 0.15);
             border-radius: 50%; transition: width 0.2s, height 0.2s, background 0.2s, border-color 0.2s;
             transform: translate(-50%, -50%); z-index: 99999; box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-            display: flex; align-items: center; justify-content: center;
+            display: none; align-items: center; justify-content: center;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            body.custom-cursor-enabled { cursor: none; }
+            .custom-cursor-enabled #custom-cursor { display: flex; }
+            .custom-cursor-enabled :is(.slider-mask, .slide-item, .portfolio-card) { cursor: none !important; }
         }
 
         #cursor-text {
@@ -42,52 +82,109 @@
         .slider-mask {
             position: relative;
             width: 100%;
-            height: 100%;
             overflow: hidden;
-            display: flex;
-            cursor: none !important;
+            display: block;
+            flex: none;
             touch-action: pan-y;
-        }
-        .slider-mask:active {
-            cursor: none !important;
+            padding: 0;
+            border-radius: 0;
         }
         .slider-track {
-            display: flex;
-            height: 100%;
-            gap: 20px;
+            display: block;
+            width: 100%;
+            position: relative;
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             user-select: none;
         }
         .slide-item {
-            flex: 0 0 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #000;
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: none !important;
+            position: absolute;
+            inset-block-start: 0;
+            inset-inline-start: var(--slide-offset, 0px);
+            width: 100%;
+            display: block;
+        }
+        .slide-item.is-active,
+        .slider-track:not([data-active-index]) > .slide-item:first-child {
+            position: relative;
+            inset: auto;
+            margin-inline-start: var(--slide-offset, 0px);
         }
         .slide-item img {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            height: auto;
+            display: block;
             pointer-events: none;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .portfolio-card {
-            cursor: none !important;
-            border-width: 4px;
+            border: 4px solid rgba(6, 182, 212, 0.4);
+            padding: 0;
+            background: #090a10;
+            border-radius: 24px;
+            overflow: hidden;
             animation: cardLiveGlow 3.5s ease-in-out infinite;
             position: relative;
+            height: auto;
+            min-width: 0;
+            align-self: start;
+            justify-content: flex-start;
+            container-type: inline-size;
         }
         .portfolio-card:hover {
             transform: translateY(-6px) scale(1.01);
         }
-        .portfolio-card:hover .slide-item img {
-            transform: scale(1.04);
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            pointer-events: none;
+            background: linear-gradient(to top, rgba(0, 0, 0, .95), rgba(0, 0, 0, .4), transparent);
+        }
+        .slider-toolbar {
+            position: absolute;
+            inset: 0;
+            z-index: 30;
+            pointer-events: none;
+        }
+        .slider-toolbar > [id$="-dots"] {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: auto;
+        }
+        .slider-toolbar > div:last-child {
+            position: absolute;
+            top: 24px;
+            inset-inline-end: 24px;
+            pointer-events: auto;
+        }
+        .slider-toolbar button { width: 36px; height: 36px; flex-shrink: 0; }
+        @container (max-width: 340px) {
+            .slider-toolbar > div:last-child { top: 60px; }
+        }
+        .portfolio-card > .portfolio-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+        }
+        @media (max-width: 767px) {
+            .slider-toolbar > div:last-child { display: none; }
+        }
+        .artwork-image { display: block; width: 100%; height: auto; object-fit: contain; }
+        .artwork-screen { position: relative; padding-top: 28px; }
+        .artwork-screen img { border-radius: 0; }
+        @keyframes splashFallback {
+            to { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
+        @keyframes contentFallback { to { opacity: 1; } }
+        html:not(.motion-ready) :is(#avail-badge, #hero-tag, #main-title, #main-desc,
+        #main-btns, #hero-screen-box, .portfolio-header-anim) {
+            animation: contentFallback 0s 4s forwards;
         }
 
         @keyframes cardLiveGlow {
@@ -217,7 +314,9 @@
             position: fixed; inset: 0; background: #030305; z-index: 99998;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             transition: opacity 0.8s ease, visibility 0.8s ease;
+            animation: splashFallback 0.8s 2.2s forwards;
         }
+        #splash-screen h1 { font-family: 'Plus Jakarta Sans', sans-serif; }
         @keyframes logoPulseAndGlow {
             0% { transform: scale(0.85); opacity: 0.3; filter: drop-shadow(0 0 15px rgba(6,182,212,0.3)); }
             50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 40px rgba(6,182,212,0.9)); }
@@ -276,7 +375,7 @@
 <body class="text-white selection:bg-cyan-500 selection:text-black overflow-x-hidden relative">
 
     <div id="splash-screen">
-        <img src="images/logo.PNG" alt="Tara Graphix Logo" class="splash-logo mb-6 object-contain">
+        <img src="media/images/logo.webp" alt="Tara Graphix Logo" class="splash-logo mb-6 object-contain" width="1536" height="1024" decoding="async" loading="eager" srcset="media/images/logo-300.webp 300w, media/images/logo-600.webp 600w, media/images/logo.webp 1536w" sizes="150px">
         <h1 class="text-xl md:text-2xl font-black tracking-[0.3em] bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-500 bg-clip-text text-transparent uppercase opacity-90 animate-pulse">TARA.GRAPHIX</h1>
     </div>
 
@@ -286,17 +385,20 @@
         <div class="absolute inset-0 bg-gradient-to-tr from-cyan-950/20 via-transparent to-indigo-950/20 opacity-60"></div>
     </div>
 
-    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-16 py-6 backdrop-blur-xl bg-[#030305]/80 border-b border-white/5">
+    <nav id="tara-navbar" class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-16 py-6 backdrop-blur-xl bg-[#030305]/80 border-b border-white/5">
         <div id="interactive-logo" class="text-xl font-black tracking-widest bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-500 bg-clip-text text-transparent cursor-pointer inline-block">TARA.GRAPHIX</div>
-        <div class="flex items-center gap-6">
-            <div class="hidden md:flex gap-8 text-sm text-slate-400">
+        <div class="nav-actions flex items-center gap-6">
+            <div id="nav-menu" class="gap-8 text-sm text-slate-400">
                 <a href="#" class="hover:text-cyan-400 transition-colors" data-en="Home" data-ar="الرئيسية">Home</a>
                 <a href="#portfolio" class="hover:text-cyan-400 transition-colors" data-en="Portfolio" data-ar="المعرض">Portfolio</a>
                 <a href="#reels" class="hover:text-cyan-400 transition-colors" data-en="Reels" data-ar="الريلز">Reels</a>
                 <a href="#about" class="hover:text-cyan-400 transition-colors" data-en="About" data-ar="عني">About</a>
                 <a href="#contact" class="hover:text-cyan-400 transition-colors" data-en="Contact" data-ar="تواصل">Contact</a>
             </div>
-            <button onclick="toggleLanguage()" id="lang-btn" class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold px-4 py-2 rounded-xl transition-all text-xs tracking-wider cursor-pointer">العربية 🇮🇶</button>
+            <button data-action="toggleLanguage" id="lang-btn" class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500 hover:text-black font-bold px-4 py-2 rounded-xl transition-all text-xs tracking-wider cursor-pointer">العربية 🇮🇶</button>
+            <button id="nav-menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Open navigation menu">
+                <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
 
@@ -323,11 +425,11 @@
 
         <div class="w-full lg:w-1/2 opacity-0 transition-transform duration-500" id="hero-screen-box">
             <div class="complete-macbook p-3.5 md:p-5">
-                <div class="relative bg-black rounded-2xl overflow-hidden aspect-video flex items-center justify-center pt-7 border border-white/10 shadow-inner">
+                <div class="artwork-screen bg-black rounded-2xl border border-white/10 shadow-inner">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-[#0d0f15] rounded-b-md z-30 flex items-center justify-center gap-1">
                         <div class="w-1 h-1 rounded-full bg-cyan-950 border border-white/10"></div>
                     </div>
-                    <img src="images/first.jpg" alt="MacBook Screen" class="w-full h-full object-cover">
+                    <img src="images/first.jpg" alt="MacBook Screen" class="artwork-image" width="1376" height="768" decoding="async" loading="eager" srcset="media/images/first-480.webp 480w, media/images/first-800.webp 800w, images/first.jpg 1376w" sizes="(min-width: 1280px) 548px, (min-width: 1024px) calc((100vw - 176px) / 2), (min-width: 768px) calc(100vw - 174px), calc(100vw - 86px)" fetchpriority="high">
                 </div>
                 <div class="macbook-base mt-3">
                     <div class="macbook-keyboard">
@@ -392,30 +494,31 @@
             <p class="text-slate-400 text-sm mt-4 md:mt-0 max-w-xs font-light border-l-2 border-cyan-500/50 pl-4 rtl:border-r-2 rtl:border-l-0 rtl:pr-4 rtl:pl-0" data-en="A glimpse of my recent social media campaigns and creative posts." data-ar="لمحة من أحدث حملات السوشيال ميديا والبوستات الإبداعية.">A glimpse of my recent social media campaigns and creative posts.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- الكارت الأول: Solar Energy -->
-            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+            <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="brand-mask">
                     <div id="brand-slider" class="slider-track">
-                        <div class="slide-item"><img src="images/image1.g1.png" alt="G1-1"></div>
-                        <div class="slide-item"><img src="images/image2.g1.png" alt="G1-2"></div>
-                        <div class="slide-item"><img src="images/image3.g1.png" alt="G1-3"></div>
-                        <div class="slide-item"><img src="images/image4.g1.png" alt="G1-4"></div>
-                        <div class="slide-item"><img src="images/image5.g1.png" alt="G1-5"></div>
-                        <div class="slide-item"><img src="images/image6.g1.png" alt="G1-6"></div>
+                        <div class="slide-item"><img data-src="media/images/image1.g1.webp" alt="G1-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g1-480.webp 480w, media/images/image1.g1-800.webp 800w, media/images/image1.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image2.g1.webp" alt="G1-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g1-480.webp 480w, media/images/image2.g1-800.webp 800w, media/images/image2.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image3.g1.webp" alt="G1-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g1-480.webp 480w, media/images/image3.g1-800.webp 800w, media/images/image3.g1.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image4.g1.webp" alt="G1-4" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image4.g1-480.webp 480w, media/images/image4.g1-800.webp 800w, media/images/image4.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image5.g1.webp" alt="G1-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g1-480.webp 480w, media/images/image5.g1-800.webp 800w, media/images/image5.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image6.g1.webp" alt="G1-6" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image6.g1-480.webp 480w, media/images/image6.g1-800.webp 800w, media/images/image6.g1.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="brand-dots"></div>
 
-                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
-                    <button onclick="prevBrandSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
-                    <button onclick="nextBrandSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                <div class="slider-toolbar">
+                    <div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="brand-dots"></div>
+                    <div class="flex items-center gap-2">
+                    <button data-action="prevBrandSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button data-action="nextBrandSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
                 </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                <div class="portfolio-caption z-20 flex justify-between items-end pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Solar Energy" data-ar="طاقة شمسية">Solar Energy</h3>
                     </div>
@@ -423,28 +526,29 @@
             </div>
 
             <!-- الكارت الثاني: Auditing & Financial Consulting -->
-            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+            <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="social-mask">
                     <div id="social-slider" class="slider-track">
-                        <div class="slide-item"><img src="images/image1.g2.png" alt="G2-1"></div>
-                        <div class="slide-item"><img src="images/image2.g2.png" alt="G2-2"></div>
-                        <div class="slide-item"><img src="images/image3.g2.png" alt="G2-3"></div>
-                        <div class="slide-item"><img src="images/image4.g2.png" alt="G2-4"></div>
-                        <div class="slide-item"><img src="images/image5.g2.png" alt="G2-5"></div>
-                        <div class="slide-item"><img src="images/image6.g2.png" alt="G2-6"></div>
+                        <div class="slide-item"><img data-src="media/images/image1.g2.webp" alt="G2-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g2-480.webp 480w, media/images/image1.g2-800.webp 800w, media/images/image1.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image2.g2.webp" alt="G2-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g2-480.webp 480w, media/images/image2.g2-800.webp 800w, media/images/image2.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image3.g2.webp" alt="G2-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g2-480.webp 480w, media/images/image3.g2-800.webp 800w, media/images/image3.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image4.g2.webp" alt="G2-4" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image4.g2-480.webp 480w, media/images/image4.g2-800.webp 800w, media/images/image4.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image5.g2.webp" alt="G2-5" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image5.g2-480.webp 480w, media/images/image5.g2-800.webp 800w, media/images/image5.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image6.g2.webp" alt="G2-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g2-480.webp 480w, media/images/image6.g2-800.webp 800w, media/images/image6.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="social-dots"></div>
 
-                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
-                    <button onclick="prevSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
-                    <button onclick="nextSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                <div class="slider-toolbar">
+                    <div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="social-dots"></div>
+                    <div class="flex items-center gap-2">
+                    <button data-action="prevSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button data-action="nextSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
                 </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                <div class="portfolio-caption z-20 flex justify-between items-end pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Auditing & Financial Consulting" data-ar="تدقيق واستشارات مالية">Auditing & Financial Consulting</h3>
                     </div>
@@ -452,28 +556,29 @@
             </div>
 
             <!-- الكارت الثالث: Tech Production -->
-            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+            <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="creative-mask">
                     <div id="creative-slider" class="slider-track">
-                        <div class="slide-item"><img src="images/image1.g3.png" alt="G3-1"></div>
-                        <div class="slide-item"><img src="images/image2.g3.png" alt="G3-2"></div>
-                        <div class="slide-item"><img src="images/image3.g3.png" alt="G3-3"></div>
-                        <div class="slide-item"><img src="images/image4.g3.png" alt="G3-4"></div>
-                        <div class="slide-item"><img src="images/image5.g3.png" alt="G3-5"></div>
-                        <div class="slide-item"><img src="images/image6.g3.png" alt="G3-6"></div>
+                        <div class="slide-item"><img data-src="images/image1.g3.png" alt="G3-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g3-480.webp 480w, images/image1.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="images/image2.g3.png" alt="G3-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g3-480.webp 480w, images/image2.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="images/image3.g3.png" alt="G3-3" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image3.g3-480.webp 480w, images/image3.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="images/image4.g3.png" alt="G3-4" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image4.g3-480.webp 480w, images/image4.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="images/image5.g3.png" alt="G3-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g3-480.webp 480w, images/image5.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="images/image6.g3.png" alt="G3-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g3-480.webp 480w, media/images/image6.g3-800.webp 800w, images/image6.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="creative-dots"></div>
 
-                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
-                    <button onclick="prevCreativeSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
-                    <button onclick="nextCreativeSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                <div class="slider-toolbar">
+                    <div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="creative-dots"></div>
+                    <div class="flex items-center gap-2">
+                    <button data-action="prevCreativeSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button data-action="nextCreativeSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
                 </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                <div class="portfolio-caption z-20 flex justify-between items-end pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Tech Production" data-ar="إنتاج تقني">Tech Production</h3>
                     </div>
@@ -481,28 +586,29 @@
             </div>
 
             <!-- الكارت الرابع: Food & Beverage -->
-            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+            <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="ads-mask">
                     <div id="ads-slider" class="slider-track">
-                        <div class="slide-item"><img src="images/image1.g4.png" alt="G4-1"></div>
-                        <div class="slide-item"><img src="images/image2.g4.png" alt="G4-2"></div>
-                        <div class="slide-item"><img src="images/image3.g4.png" alt="G4-3"></div>
-                        <div class="slide-item"><img src="images/image4.g4.png" alt="G4-4"></div>
-                        <div class="slide-item"><img src="images/image5.g4.png" alt="G4-5"></div>
-                        <div class="slide-item"><img src="images/image6.g4.png" alt="G4-6"></div>
+                        <div class="slide-item"><img data-src="media/images/image1.g4.webp" alt="G4-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g4-480.webp 480w, media/images/image1.g4-800.webp 800w, media/images/image1.g4.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image2.g4.webp" alt="G4-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g4-480.webp 480w, media/images/image2.g4-800.webp 800w, media/images/image2.g4.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image3.g4.webp" alt="G4-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g4-480.webp 480w, media/images/image3.g4-800.webp 800w, media/images/image3.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image4.g4.webp" alt="G4-4" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image4.g4-480.webp 480w, media/images/image4.g4-800.webp 800w, media/images/image4.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image5.g4.webp" alt="G4-5" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image5.g4-480.webp 480w, media/images/image5.g4-800.webp 800w, media/images/image5.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image6.g4.webp" alt="G4-6" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image6.g4-480.webp 480w, media/images/image6.g4-800.webp 800w, media/images/image6.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="ads-dots"></div>
 
-                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
-                    <button onclick="prevAdsSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
-                    <button onclick="nextAdsSlide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                <div class="slider-toolbar">
+                    <div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="ads-dots"></div>
+                    <div class="flex items-center gap-2">
+                    <button data-action="prevAdsSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button data-action="nextAdsSlide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
                 </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                <div class="portfolio-caption z-20 flex justify-between items-end pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Food & Beverage" data-ar="أغذية ومشروبات">Food & Beverage</h3>
                     </div>
@@ -510,29 +616,30 @@
             </div>
 
             <!-- الكارت الخامس: Media Production -->
-            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+            <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="extra1-mask">
                     <div id="extra1-slider" class="slider-track" style="--total-slides: 7;">
-                        <div class="slide-item"><img src="images/image1.g5.png" alt="G5-1"></div>
-                        <div class="slide-item"><img src="images/image2.g5.png" alt="G5-2"></div>
-                        <div class="slide-item"><img src="images/image3.g5.png" alt="G5-3"></div>
-                        <div class="slide-item"><img src="images/image4.g5.png" alt="G5-4"></div>
-                        <div class="slide-item"><img src="images/image5.g5.png" alt="G5-5"></div>
-                        <div class="slide-item"><img src="images/image6.g5.png" alt="G5-6"></div>
-                        <div class="slide-item"><img src="images/image7.g5.png" alt="G5-7"></div>
+                        <div class="slide-item"><img data-src="media/images/image1.g5.webp" alt="G5-1" width="1124" height="1399" decoding="async" loading="lazy" data-srcset="media/images/image1.g5-480.webp 480w, media/images/image1.g5-800.webp 800w, media/images/image1.g5.webp 1124w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image2.g5.webp" alt="G5-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g5-480.webp 480w, media/images/image2.g5-800.webp 800w, media/images/image2.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image3.g5.webp" alt="G5-3" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image3.g5-480.webp 480w, media/images/image3.g5-800.webp 800w, media/images/image3.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image4.g5.webp" alt="G5-4" width="1123" height="1400" decoding="async" loading="lazy" data-srcset="media/images/image4.g5-480.webp 480w, media/images/image4.g5-800.webp 800w, media/images/image4.g5.webp 1123w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image5.g5.webp" alt="G5-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g5-480.webp 480w, media/images/image5.g5-800.webp 800w, media/images/image5.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image6.g5.webp" alt="G5-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g5-480.webp 480w, media/images/image6.g5-800.webp 800w, media/images/image6.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image7.g5.webp" alt="G5-7" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image7.g5-480.webp 480w, media/images/image7.g5-800.webp 800w, media/images/image7.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="extra1-dots"></div>
 
-                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
-                    <button onclick="prevExtra1Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
-                    <button onclick="nextExtra1Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                <div class="slider-toolbar">
+                    <div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="extra1-dots"></div>
+                    <div class="flex items-center gap-2">
+                    <button data-action="prevExtra1Slide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button data-action="nextExtra1Slide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
                 </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                <div class="portfolio-caption z-20 flex justify-between items-end pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Media Production" data-ar="إنتاج إعلامي">Media Production</h3>
                     </div>
@@ -540,28 +647,29 @@
             </div>
 
             <!-- الكارت السادس: Dental Clinic -->
-            <div class="portfolio-card group relative bg-[#090a10] rounded-3xl overflow-hidden transition-all duration-500 h-[380px] md:h-[420px] flex flex-col justify-between p-2">
+            <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="extra2-mask">
                     <div id="extra2-slider" class="slider-track">
-                        <div class="slide-item"><img src="images/image1.g6.png" alt="G6-1"></div>
-                        <div class="slide-item"><img src="images/image2.g6.png" alt="G6-2"></div>
-                        <div class="slide-item"><img src="images/image3.g6.png" alt="G6-3"></div>
-                        <div class="slide-item"><img src="images/image4.g6.png" alt="G6-4"></div>
-                        <div class="slide-item"><img src="images/image5.g6.png" alt="G6-5"></div>
-                        <div class="slide-item"><img src="images/image6.g6.png" alt="G6-6"></div>
+                        <div class="slide-item"><img data-src="media/images/image1.g6.webp" alt="G6-1" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image1.g6-480.webp 480w, media/images/image1.g6-800.webp 800w, media/images/image1.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image2.g6.webp" alt="G6-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g6-480.webp 480w, media/images/image2.g6-800.webp 800w, media/images/image2.g6.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image3.g6.webp" alt="G6-3" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image3.g6-480.webp 480w, media/images/image3.g6-800.webp 800w, media/images/image3.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image4.g6.webp" alt="G6-4" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image4.g6-480.webp 480w, media/images/image4.g6-800.webp 800w, media/images/image4.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image5.g6.webp" alt="G6-5" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image5.g6-480.webp 480w, media/images/image5.g6-800.webp 800w, media/images/image5.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img data-src="media/images/image6.g6.webp" alt="G6-6" width="1003" height="1568" decoding="async" loading="lazy" data-srcset="media/images/image6.g6-480.webp 480w, media/images/image6.g6-800.webp 800w, media/images/image6.g6.webp 1003w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none"></div>
 
-                <div class="absolute top-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="extra2-dots"></div>
 
-                <div class="absolute top-6 right-6 z-30 hidden md:flex items-center gap-2 rtl:left-6 rtl:right-auto">
-                    <button onclick="prevExtra2Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
-                    <button onclick="nextExtra2Slide()" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                <div class="slider-toolbar">
+                    <div class="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15" id="extra2-dots"></div>
+                    <div class="flex items-center gap-2">
+                    <button data-action="prevExtra2Slide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❮</button>
+                    <button data-action="nextExtra2Slide" class="w-9 h-9 rounded-full bg-black/60 border border-white/20 text-white flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all cursor-pointer">❯</button>
+                </div>
                 </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 z-20 flex justify-between items-end pointer-events-none">
+                <div class="portfolio-caption z-20 flex justify-between items-end pointer-events-none">
                     <div class="pointer-events-auto">
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-1" data-en="Dental Clinic" data-ar="عيادة أسنان">Dental Clinic</h3>
                     </div>
@@ -591,7 +699,7 @@
                         <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
                         <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
                     </div>
-                    <video src="images2/reel1.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                    <video data-src="media/videos/reel1.mp4" data-poster="media/videos/reel1-poster.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
                 </div>
             </div>
             <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto md:-translate-y-6">
@@ -600,7 +708,7 @@
                         <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
                         <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
                     </div>
-                    <video src="images2/reel2.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                    <video data-src="media/videos/reel2.mp4" data-poster="media/videos/reel2-poster.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
                 </div>
             </div>
             <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto">
@@ -609,7 +717,7 @@
                         <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
                         <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
                     </div>
-                    <video src="images2/reel3.mp4" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                    <video data-src="media/videos/reel3.mp4" data-poster="media/videos/reel3-poster.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
                 </div>
             </div>
         </div>
@@ -648,9 +756,9 @@
 
             <div class="w-full flex justify-center">
                 <div class="ipad-mockup p-4 w-full max-w-[420px]">
-                    <div class="relative bg-black rounded-[26px] overflow-hidden aspect-[4/3] flex items-center justify-center">
-                        <img src="images/about.PNG" alt="Tara Photo" class="w-full h-full object-cover">
-                        <div class="absolute bottom-3 left-3 right-3 bg-black/70 backdrop-blur-md py-1.5 px-3 rounded-xl border border-white/10 text-center">
+                    <div class="bg-black rounded-[26px]">
+                        <img src="media/images/about.webp" alt="Tara Photo" class="artwork-image" width="1448" height="1086" decoding="async" loading="lazy" srcset="media/images/about-480.webp 480w, media/images/about-800.webp 800w, media/images/about.webp 1448w" sizes="(min-width: 480px) 378px, calc(100vw - 90px)">
+                        <div class="mt-3 bg-black/70 backdrop-blur-md py-1.5 px-3 rounded-xl border border-white/10 text-center">
                             <span class="text-xs font-bold text-cyan-400" data-en="Duhok, Iraq 🇮🇶" data-ar="دهوك، العراق 🇮🇶">Duhok, Iraq 🇮🇶</span>
                         </div>
                     </div>
@@ -688,7 +796,7 @@
                     <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                     <div class="flex flex-col text-left rtl:text-right">
                         <span class="text-xs font-bold leading-tight" data-en="Chat on WhatsApp" data-ar="تواصل عبر الواتساب">Chat on WhatsApp</span>
-                        <span class="text-[11px] font-mono opacity-90 leading-tight">+964 751 816 7235</span>
+                        <span dir="ltr" class="text-[11px] font-mono opacity-90 leading-tight">+964 751 816 7235</span>
                     </div>
                 </a>
             </div>
@@ -702,15 +810,121 @@
 
     <!-- السكريبتات -->
     <script>
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const splash = document.getElementById('splash-screen');
-                splash.style.opacity = '0';
-                splash.style.visibility = 'hidden';
-            }, 2500);
+        const dismissSplash = () => {
+            const splash = document.getElementById('splash-screen');
+            splash.style.opacity = '0';
+            splash.style.visibility = 'hidden';
+            splash.style.pointerEvents = 'none';
+            // Once dismissal starts, let the existing fade finish without a second CSS fade.
+            splash.style.animation = 'none';
+        };
+        // Match the original splash visuals, with an independent intentional hold.
+        setTimeout(dismissSplash, 1800);
+
+        // CSS also dismisses the splash and reveals content if scripts fail entirely.
+        setTimeout(() => {
+            if (!window.gsap) document.querySelectorAll('#avail-badge, #hero-tag, #main-title, #main-desc, #main-btns, #hero-screen-box, .portfolio-header-anim')
+                .forEach(el => { el.style.opacity = '1'; });
+        }, 1500);
+
+        function loadArtwork(image) {
+            if (image.dataset.src) {
+                // IntersectionObserver has already deferred this request until needed.
+                image.loading = 'eager';
+                if (image.dataset.srcset) {
+                    image.srcset = image.dataset.srcset;
+                    delete image.dataset.srcset;
+                }
+                image.src = image.dataset.src;
+                delete image.dataset.src;
+            }
+        }
+        const artworkObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+            entries.forEach(({ target: mask, isIntersecting }) => {
+                const slider = mask.firstElementChild;
+                if (isIntersecting) loadArtwork(slider.children[Number(slider.dataset.activeIndex || 0)].querySelector('img'));
+            });
+        }, { rootMargin: '300px 0px' }) : null;
+        document.querySelectorAll('.slider-track').forEach(slider => {
+            if (artworkObserver) artworkObserver.observe(slider.parentElement);
+            else slider.querySelectorAll('img').forEach(loadArtwork);
+        });
+
+        function prepareSlide(slider, index) {
+            const image = slider.children[index].querySelector('img');
+            // Only the active image is in normal flow; other slides cannot affect artwork height.
+            Array.from(slider.children).forEach((slide, slideIndex) => {
+                slide.style.setProperty('--slide-offset', `calc(${slideIndex * 100}% + ${slideIndex * 20}px)`);
+                slide.classList.toggle('is-active', slideIndex === index);
+            });
+            slider.dataset.activeIndex = index;
+            const bounds = slider.parentElement.getBoundingClientRect();
+            if (bounds.top < innerHeight + 300 && bounds.bottom > -300) loadArtwork(image);
+            if (window.ScrollTrigger) ScrollTrigger.refresh();
+        }
+
+        function playReel(video) {
+            video.play().catch(error => {
+                // Scrolling away can interrupt a pending play request normally.
+                if (error.name !== 'AbortError') video.controls = true;
+            });
+        }
+        const reelObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+            entries.forEach(({ target: video, isIntersecting }) => {
+                video.dataset.nearViewport = String(isIntersecting);
+                if (isIntersecting) {
+                    if (!video.src) { video.poster = video.dataset.poster; video.src = video.dataset.src; video.load(); }
+                    if (!document.hidden) playReel(video);
+                } else video.pause();
+            });
+        }, { rootMargin: '150px 0px' }) : null;
+        document.querySelectorAll('video[data-src]').forEach(video => {
+            if (reelObserver) reelObserver.observe(video);
+            else { video.poster = video.dataset.poster; video.src = video.dataset.src; video.controls = true; }
+        });
+        document.addEventListener('visibilitychange', () => {
+            document.querySelectorAll('video').forEach(video => {
+                if (document.hidden) video.pause();
+                else if (video.dataset.nearViewport === 'true') playReel(video);
+            });
+        });
+
+        // Explicit handlers allow CSP to reject all inline event attributes.
+        const buttonActions = new Map([
+            ['toggleLanguage', toggleLanguage],
+            ['prevBrandSlide', prevBrandSlide], ['nextBrandSlide', nextBrandSlide],
+            ['prevSlide', prevSlide], ['nextSlide', nextSlide],
+            ['prevCreativeSlide', prevCreativeSlide], ['nextCreativeSlide', nextCreativeSlide],
+            ['prevAdsSlide', prevAdsSlide], ['nextAdsSlide', nextAdsSlide],
+            ['prevExtra1Slide', prevExtra1Slide], ['nextExtra1Slide', nextExtra1Slide],
+            ['prevExtra2Slide', prevExtra2Slide], ['nextExtra2Slide', nextExtra2Slide]
+        ]);
+        document.querySelectorAll('button[data-action]').forEach(button => {
+            const handler = buttonActions.get(button.dataset.action);
+            if (handler) button.addEventListener('click', handler);
         });
 
         let currentLang = 'en';
+        const navbar = document.getElementById('tara-navbar');
+        const navMenu = document.getElementById('nav-menu');
+        const navMenuToggle = document.getElementById('nav-menu-toggle');
+        function setNavMenu(open, returnFocus = false) {
+            navMenu.classList.toggle('is-open', open);
+            navMenuToggle.setAttribute('aria-expanded', String(open));
+            navMenuToggle.setAttribute('aria-label', currentLang === 'ar'
+                ? (open ? 'إغلاق قائمة التنقل' : 'فتح قائمة التنقل')
+                : (open ? 'Close navigation menu' : 'Open navigation menu'));
+            if (returnFocus) navMenuToggle.focus();
+        }
+        navMenuToggle.addEventListener('click', () => setNavMenu(navMenuToggle.getAttribute('aria-expanded') !== 'true'));
+        navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setNavMenu(false)));
+        document.addEventListener('click', event => {
+            if (!navbar.contains(event.target)) setNavMenu(false);
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && navMenuToggle.getAttribute('aria-expanded') === 'true') setNavMenu(false, true);
+        });
+        window.matchMedia('(min-width: 1024px)').addEventListener('change', () => setNavMenu(false));
         function toggleLanguage() {
             const htmlRoot = document.getElementById('html-root');
             const langBtn = document.getElementById('lang-btn');
@@ -719,19 +933,20 @@
                 htmlRoot.setAttribute('lang', 'ar'); 
                 htmlRoot.setAttribute('dir', 'rtl'); 
                 document.body.classList.add('arabic-font'); 
-                langBtn.innerHTML = 'English 🇺🇸'; 
+                langBtn.textContent = 'English 🇺🇸';
             } else { 
                 currentLang = 'en'; 
                 htmlRoot.setAttribute('lang', 'en'); 
                 htmlRoot.setAttribute('dir', 'ltr'); 
                 document.body.classList.remove('arabic-font'); 
-                langBtn.innerHTML = 'العربية 🇮🇶'; 
+                langBtn.textContent = 'العربية 🇮🇶';
             }
             document.querySelectorAll('[data-en]').forEach(el => {
                 const val = el.getAttribute(`data-${currentLang}`);
                 if (val !== null) el.innerText = val;
             });
 
+            setNavMenu(false);
             updateBrandSlider();
             updateSlider();
             updateCreativeSlider();
@@ -743,7 +958,7 @@
         function initDots(dotsId, total) {
             const container = document.getElementById(dotsId);
             if (!container) return;
-            container.innerHTML = '';
+            container.replaceChildren();
             for (let i = 0; i < total; i++) {
                 const dot = document.createElement('div');
                 dot.className = `h-1.5 rounded-full transition-all duration-300 ${i === 0 ? 'w-5 bg-cyan-400' : 'w-1.5 bg-white/40'}`;
@@ -768,6 +983,8 @@
             initDots('extra1-dots', 7);
             initDots('extra2-dots', 6);
 
+            if (!window.gsap || !window.ScrollTrigger) return;
+            document.documentElement.classList.add('motion-ready');
             gsap.to(".portfolio-header-anim", {
                 scrollTrigger: {
                     trigger: "#portfolio",
@@ -790,6 +1007,7 @@
             if (slider) {
                 const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
                 slider.style.transform = `translateX(calc(${direction * currentBrandSlideIndex * -100}% - ${direction * currentBrandSlideIndex * 20}px))`;
+                prepareSlide(slider, currentBrandSlideIndex);
                 updateDots('brand-dots', currentBrandSlideIndex);
             }
         }
@@ -803,6 +1021,7 @@
             if (slider) {
                 const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
                 slider.style.transform = `translateX(calc(${direction * currentSlideIndex * -100}% - ${direction * currentSlideIndex * 20}px))`;
+                prepareSlide(slider, currentSlideIndex);
                 updateDots('social-dots', currentSlideIndex);
             }
         }
@@ -816,6 +1035,7 @@
             if (slider) {
                 const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
                 slider.style.transform = `translateX(calc(${direction * currentCreativeIndex * -100}% - ${direction * currentCreativeIndex * 20}px))`;
+                prepareSlide(slider, currentCreativeIndex);
                 updateDots('creative-dots', currentCreativeIndex);
             }
         }
@@ -829,6 +1049,7 @@
             if (slider) {
                 const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
                 slider.style.transform = `translateX(calc(${direction * currentAdsIndex * -100}% - ${direction * currentAdsIndex * 20}px))`;
+                prepareSlide(slider, currentAdsIndex);
                 updateDots('ads-dots', currentAdsIndex);
             }
         }
@@ -842,6 +1063,7 @@
             if (slider) {
                 const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
                 slider.style.transform = `translateX(calc(${direction * currentExtra1Index * -100}% - ${direction * currentExtra1Index * 20}px))`;
+                prepareSlide(slider, currentExtra1Index);
                 updateDots('extra1-dots', currentExtra1Index);
             }
         }
@@ -855,6 +1077,7 @@
             if (slider) {
                 const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
                 slider.style.transform = `translateX(calc(${direction * currentExtra2Index * -100}% - ${direction * currentExtra2Index * 20}px))`;
+                prepareSlide(slider, currentExtra2Index);
                 updateDots('extra2-dots', currentExtra2Index);
             }
         }
@@ -891,45 +1114,63 @@
         setupSwipe('extra1-mask', nextExtra1Slide, prevExtra1Slide);
         setupSwipe('extra2-mask', nextExtra2Slide, prevExtra2Slide);
 
+        document.querySelectorAll('.slider-track').forEach(slider => prepareSlide(slider, 0));
+
         const cursor = document.getElementById('custom-cursor');
         const cursorText = document.getElementById('cursor-text');
 
-        window.addEventListener('mousemove', (e) => {
+        const cursorCapability = window.matchMedia('(hover: hover) and (pointer: fine)');
+        const cursorCards = document.querySelectorAll('.portfolio-card');
+        function followCursor(e) {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-
             const logo = document.getElementById('interactive-logo');
-            if (logo) {
+            if (logo && window.gsap) {
                 const xPos = (e.clientX / window.innerWidth - 0.5) * 15;
                 const yPos = (e.clientY / window.innerHeight - 0.5) * 15;
                 gsap.to(logo, { x: xPos, y: yPos, duration: 0.5, ease: "power2.out" });
             }
-        });
-
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                cursor.style.width = '75px';
-                cursor.style.height = '75px';
-                cursor.style.background = '#06b6d4';
-                cursor.style.borderColor = '#06b6d4';
-                cursorText.style.opacity = '1';
-                cursorText.innerText = currentLang === 'ar' ? 'عرض' : 'VIEW';
+        }
+        function expandCursor() {
+            cursor.style.width = '75px';
+            cursor.style.height = '75px';
+            cursor.style.background = '#06b6d4';
+            cursor.style.borderColor = '#06b6d4';
+            cursorText.style.opacity = '1';
+            cursorText.innerText = currentLang === 'ar' ? 'عرض' : 'VIEW';
+        }
+        function resetCursor() {
+            cursor.style.width = '35px';
+            cursor.style.height = '35px';
+            cursor.style.background = 'rgba(6, 182, 212, 0.15)';
+            cursor.style.borderColor = 'rgba(6, 182, 212, 0.8)';
+            cursorText.style.opacity = '0';
+        }
+        function updateCursorCapability() {
+            const enabled = cursorCapability.matches;
+            document.body.classList.toggle('custom-cursor-enabled', enabled);
+            window.removeEventListener('mousemove', followCursor);
+            cursorCards.forEach(card => {
+                card.removeEventListener('mouseenter', expandCursor);
+                card.removeEventListener('mouseleave', resetCursor);
+                if (enabled) {
+                    card.addEventListener('mouseenter', expandCursor);
+                    card.addEventListener('mouseleave', resetCursor);
+                }
             });
-            card.addEventListener('mouseleave', () => {
-                cursor.style.width = '35px';
-                cursor.style.height = '35px';
-                cursor.style.background = 'rgba(6, 182, 212, 0.15)';
-                cursor.style.borderColor = 'rgba(6, 182, 212, 0.8)';
-                cursorText.style.opacity = '0';
-            });
-        });
+            if (enabled) window.addEventListener('mousemove', followCursor);
+            else resetCursor();
+        }
+        cursorCapability.addEventListener('change', updateCursorCapability);
+        updateCursorCapability();
 
         window.addEventListener("DOMContentLoaded", () => {
+            if (!window.gsap) return;
             const tl = gsap.timeline();
-            tl.to("#avail-badge", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "+=2.0")
-              .to("#hero-tag", { opacity: 1, y: 0, duration: 0.8, ease: "power3.0" }, "-=0.4")
+            tl.to("#avail-badge", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0)
+              .to("#hero-tag", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
               .to("#main-title", { opacity: 1, y: -10, duration: 1.2, ease: "power3.out" }, "-=0.4")
-              .to("#main-desc", { opacity: 1, y: 0, duration: 1, ease: "power3.0" }, "-=0.7")
+              .to("#main-desc", { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.7")
               .to("#hero-screen-box", { 
                   opacity: 1, 
                   scale: 1, 

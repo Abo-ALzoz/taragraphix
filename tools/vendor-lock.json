@@ -1,0 +1,23 @@
+[
+  {
+    "file": "assets/vendor/tailwind-3.4.17-176e894661aa.js",
+    "version": "3.4.17",
+    "source": "https://cdn.tailwindcss.com/3.4.17",
+    "sha256": "176e894661aa9cdc9a5cba6c720044cbbf7b8bd80d1c9a142a7c24b1b6c50d15",
+    "integrity": "sha384-igm5BeiBt36UU4gqwWS7imYmelpTsZlQ45FZf+XBn9MuJbn4nQr7yx1yFydocC/K"
+  },
+  {
+    "file": "assets/vendor/gsap.min-3.12.2-efc85c7eb141.js",
+    "version": "3.12.2",
+    "source": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js",
+    "sha256": "efc85c7eb141819717cda0033484a84b1c890d13b02e355a2fec79d424b20e7a",
+    "integrity": "sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS"
+  },
+  {
+    "file": "assets/vendor/ScrollTrigger.min-3.12.2-65f6c13748b0.js",
+    "version": "3.12.2",
+    "source": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js",
+    "sha256": "65f6c13748b0c8d8f9eabd0373a130ac293b3f16bf34aaa946d953980372b932",
+    "integrity": "sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE"
+  }
+]

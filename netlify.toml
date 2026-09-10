@@ -1,0 +1,6 @@
+[build]
+  command = "python3 tools/build_site.py"
+  publish = "dist"
+
+# Security headers are generated into dist/_headers with the current inline
+# script hash. Publish dist, never the repository root (including manual deploys).
