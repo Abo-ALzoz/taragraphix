@@ -45,8 +45,8 @@ a compromise was found; that possibility is not reported as an existing exploit.
   untouched in the source project; originals referenced by the page are copied.
 - Ignore local environment files and generated output in Git. Ignore rules are
   not the security boundary: the publication allowlist is.
-- Keep mutable HTML/artwork/video URLs revalidated. Only integrity-pinned,
-  content-hashed vendor script URLs receive year-long immutable caching.
+- Keep HTML revalidated. The build now generates content-hashed media URLs;
+  those and integrity-pinned vendor scripts receive year-long immutable caching.
 - The existing safe external link attributes were retained. Instagram and
   WhatsApp URLs are fixed HTTPS links with `noopener noreferrer`. The WhatsApp
   phone path and prefilled text remain unchanged.
@@ -78,7 +78,7 @@ a compromise was found; that possibility is not reported as an existing exploit.
 - `.gitignore`: excludes build output, Python bytecode, and local environment files.
 - `netlify.toml`: builds using Python and publishes `dist`.
 - `tools/build_site.py`: validates vendor integrity and public asset paths,
-  stages referenced assets, generates current inline-script CSP hashes/headers.
+  stages referenced assets with content-hashed media URLs, generates current inline-script CSP hashes/headers.
 - `tools/vendor-lock.json`: upstream URLs, versions, hashes, and integrity values.
 - `assets/vendor/tailwind-3.4.17-176e894661aa.js`
 - `assets/vendor/gsap.min-3.12.2-efc85c7eb141.js`
@@ -117,8 +117,8 @@ Other headers:
 - `Cross-Origin-Opener-Policy: same-origin`
 - `Cross-Origin-Resource-Policy: same-origin`
 - `Strict-Transport-Security: max-age=31536000`
-- HTML and mutable media: `Cache-Control: public, max-age=0, must-revalidate`
-- Individually hashed vendor files: `Cache-Control: public, max-age=31536000, immutable`
+- HTML: `Cache-Control: public, max-age=0, must-revalidate`
+- Content-hashed media and vendor files: `Cache-Control: public, max-age=31536000, immutable`
 
 No preload or includeSubDomains directive was added. The live Netlify response
 already advertises provider-managed HSTS with includeSubDomains/preload; final

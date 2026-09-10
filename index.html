@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Tara | Graphic Design Portfolio</title>
+    <link rel="preload" as="image" href="images/first.jpg" imagesrcset="media/images/first-480.webp 480w, media/images/first-800.webp 800w, images/first.jpg 1376w" imagesizes="(min-width: 1280px) 548px, (min-width: 1024px) calc((100vw - 176px) / 2), (min-width: 768px) calc(100vw - 174px), calc(100vw - 86px)" fetchpriority="high">
     <!-- Tailwind CSS -->
     <script defer src="assets/vendor/tailwind-3.4.17-176e894661aa.js" integrity="sha384-igm5BeiBt36UU4gqwWS7imYmelpTsZlQ45FZf+XBn9MuJbn4nQr7yx1yFydocC/K" crossorigin="anonymous"></script>
     <!-- GSAP & ScrollTrigger -->
@@ -375,7 +376,7 @@
 <body class="text-white selection:bg-cyan-500 selection:text-black overflow-x-hidden relative">
 
     <div id="splash-screen">
-        <img src="media/images/logo.webp" alt="Tara Graphix Logo" class="splash-logo mb-6 object-contain" width="1536" height="1024" decoding="async" loading="eager" srcset="media/images/logo-300.webp 300w, media/images/logo-600.webp 600w, media/images/logo.webp 1536w" sizes="150px">
+        <img style="aspect-ratio: 1536 / 1024" src="media/images/logo.webp" alt="Tara Graphix Logo" class="splash-logo mb-6 object-contain" width="1536" height="1024" decoding="async" loading="eager" srcset="media/images/logo-300.webp 300w, media/images/logo-600.webp 600w, media/images/logo.webp 1536w" sizes="150px">
         <h1 class="text-xl md:text-2xl font-black tracking-[0.3em] bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-500 bg-clip-text text-transparent uppercase opacity-90 animate-pulse">TARA.GRAPHIX</h1>
     </div>
 
@@ -429,7 +430,7 @@
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-3 bg-[#0d0f15] rounded-b-md z-30 flex items-center justify-center gap-1">
                         <div class="w-1 h-1 rounded-full bg-cyan-950 border border-white/10"></div>
                     </div>
-                    <img src="images/first.jpg" alt="MacBook Screen" class="artwork-image" width="1376" height="768" decoding="async" loading="eager" srcset="media/images/first-480.webp 480w, media/images/first-800.webp 800w, images/first.jpg 1376w" sizes="(min-width: 1280px) 548px, (min-width: 1024px) calc((100vw - 176px) / 2), (min-width: 768px) calc(100vw - 174px), calc(100vw - 86px)" fetchpriority="high">
+                    <img style="aspect-ratio: 1376 / 768" src="images/first.jpg" alt="MacBook Screen" class="artwork-image" width="1376" height="768" decoding="async" loading="eager" srcset="media/images/first-480.webp 480w, media/images/first-800.webp 800w, images/first.jpg 1376w" sizes="(min-width: 1280px) 548px, (min-width: 1024px) calc((100vw - 176px) / 2), (min-width: 768px) calc(100vw - 174px), calc(100vw - 86px)" fetchpriority="high">
                 </div>
                 <div class="macbook-base mt-3">
                     <div class="macbook-keyboard">
@@ -499,12 +500,12 @@
             <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="brand-mask">
                     <div id="brand-slider" class="slider-track">
-                        <div class="slide-item"><img data-src="media/images/image1.g1.webp" alt="G1-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g1-480.webp 480w, media/images/image1.g1-800.webp 800w, media/images/image1.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image2.g1.webp" alt="G1-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g1-480.webp 480w, media/images/image2.g1-800.webp 800w, media/images/image2.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image3.g1.webp" alt="G1-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g1-480.webp 480w, media/images/image3.g1-800.webp 800w, media/images/image3.g1.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image4.g1.webp" alt="G1-4" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image4.g1-480.webp 480w, media/images/image4.g1-800.webp 800w, media/images/image4.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image5.g1.webp" alt="G1-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g1-480.webp 480w, media/images/image5.g1-800.webp 800w, media/images/image5.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image6.g1.webp" alt="G1-6" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image6.g1-480.webp 480w, media/images/image6.g1-800.webp 800w, media/images/image6.g1.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image1.g1.webp" alt="G1-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g1-480.webp 480w, media/images/image1.g1-800.webp 800w, media/images/image1.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image2.g1.webp" alt="G1-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g1-480.webp 480w, media/images/image2.g1-800.webp 800w, media/images/image2.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image3.g1.webp" alt="G1-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g1-480.webp 480w, media/images/image3.g1-800.webp 800w, media/images/image3.g1.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image4.g1.webp" alt="G1-4" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image4.g1-480.webp 480w, media/images/image4.g1-800.webp 800w, media/images/image4.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image5.g1.webp" alt="G1-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g1-480.webp 480w, media/images/image5.g1-800.webp 800w, media/images/image5.g1.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image6.g1.webp" alt="G1-6" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image6.g1-480.webp 480w, media/images/image6.g1-800.webp 800w, media/images/image6.g1.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
@@ -529,12 +530,12 @@
             <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="social-mask">
                     <div id="social-slider" class="slider-track">
-                        <div class="slide-item"><img data-src="media/images/image1.g2.webp" alt="G2-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g2-480.webp 480w, media/images/image1.g2-800.webp 800w, media/images/image1.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image2.g2.webp" alt="G2-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g2-480.webp 480w, media/images/image2.g2-800.webp 800w, media/images/image2.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image3.g2.webp" alt="G2-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g2-480.webp 480w, media/images/image3.g2-800.webp 800w, media/images/image3.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image4.g2.webp" alt="G2-4" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image4.g2-480.webp 480w, media/images/image4.g2-800.webp 800w, media/images/image4.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image5.g2.webp" alt="G2-5" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image5.g2-480.webp 480w, media/images/image5.g2-800.webp 800w, media/images/image5.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image6.g2.webp" alt="G2-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g2-480.webp 480w, media/images/image6.g2-800.webp 800w, media/images/image6.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image1.g2.webp" alt="G2-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g2-480.webp 480w, media/images/image1.g2-800.webp 800w, media/images/image1.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image2.g2.webp" alt="G2-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g2-480.webp 480w, media/images/image2.g2-800.webp 800w, media/images/image2.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image3.g2.webp" alt="G2-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g2-480.webp 480w, media/images/image3.g2-800.webp 800w, media/images/image3.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image4.g2.webp" alt="G2-4" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image4.g2-480.webp 480w, media/images/image4.g2-800.webp 800w, media/images/image4.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image5.g2.webp" alt="G2-5" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image5.g2-480.webp 480w, media/images/image5.g2-800.webp 800w, media/images/image5.g2.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image6.g2.webp" alt="G2-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g2-480.webp 480w, media/images/image6.g2-800.webp 800w, media/images/image6.g2.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
@@ -559,12 +560,12 @@
             <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="creative-mask">
                     <div id="creative-slider" class="slider-track">
-                        <div class="slide-item"><img data-src="images/image1.g3.png" alt="G3-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g3-480.webp 480w, images/image1.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="images/image2.g3.png" alt="G3-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g3-480.webp 480w, images/image2.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="images/image3.g3.png" alt="G3-3" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image3.g3-480.webp 480w, images/image3.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="images/image4.g3.png" alt="G3-4" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image4.g3-480.webp 480w, images/image4.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="images/image5.g3.png" alt="G3-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g3-480.webp 480w, images/image5.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="images/image6.g3.png" alt="G3-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g3-480.webp 480w, media/images/image6.g3-800.webp 800w, images/image6.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="images/image1.g3.png" alt="G3-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g3-480.webp 480w, images/image1.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="images/image2.g3.png" alt="G3-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g3-480.webp 480w, images/image2.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="images/image3.g3.png" alt="G3-3" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image3.g3-480.webp 480w, images/image3.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="images/image4.g3.png" alt="G3-4" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image4.g3-480.webp 480w, images/image4.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="images/image5.g3.png" alt="G3-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g3-480.webp 480w, images/image5.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="images/image6.g3.png" alt="G3-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g3-480.webp 480w, media/images/image6.g3-800.webp 800w, images/image6.g3.png 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
@@ -589,12 +590,12 @@
             <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="ads-mask">
                     <div id="ads-slider" class="slider-track">
-                        <div class="slide-item"><img data-src="media/images/image1.g4.webp" alt="G4-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g4-480.webp 480w, media/images/image1.g4-800.webp 800w, media/images/image1.g4.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image2.g4.webp" alt="G4-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g4-480.webp 480w, media/images/image2.g4-800.webp 800w, media/images/image2.g4.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image3.g4.webp" alt="G4-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g4-480.webp 480w, media/images/image3.g4-800.webp 800w, media/images/image3.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image4.g4.webp" alt="G4-4" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image4.g4-480.webp 480w, media/images/image4.g4-800.webp 800w, media/images/image4.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image5.g4.webp" alt="G4-5" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image5.g4-480.webp 480w, media/images/image5.g4-800.webp 800w, media/images/image5.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image6.g4.webp" alt="G4-6" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image6.g4-480.webp 480w, media/images/image6.g4-800.webp 800w, media/images/image6.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image1.g4.webp" alt="G4-1" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image1.g4-480.webp 480w, media/images/image1.g4-800.webp 800w, media/images/image1.g4.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image2.g4.webp" alt="G4-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g4-480.webp 480w, media/images/image2.g4-800.webp 800w, media/images/image2.g4.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image3.g4.webp" alt="G4-3" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image3.g4-480.webp 480w, media/images/image3.g4-800.webp 800w, media/images/image3.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image4.g4.webp" alt="G4-4" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image4.g4-480.webp 480w, media/images/image4.g4-800.webp 800w, media/images/image4.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image5.g4.webp" alt="G4-5" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image5.g4-480.webp 480w, media/images/image5.g4-800.webp 800w, media/images/image5.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1092 / 1440" data-src="media/images/image6.g4.webp" alt="G4-6" width="1092" height="1440" decoding="async" loading="lazy" data-srcset="media/images/image6.g4-480.webp 480w, media/images/image6.g4-800.webp 800w, media/images/image6.g4.webp 1092w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
@@ -619,13 +620,13 @@
             <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="extra1-mask">
                     <div id="extra1-slider" class="slider-track" style="--total-slides: 7;">
-                        <div class="slide-item"><img data-src="media/images/image1.g5.webp" alt="G5-1" width="1124" height="1399" decoding="async" loading="lazy" data-srcset="media/images/image1.g5-480.webp 480w, media/images/image1.g5-800.webp 800w, media/images/image1.g5.webp 1124w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image2.g5.webp" alt="G5-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g5-480.webp 480w, media/images/image2.g5-800.webp 800w, media/images/image2.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image3.g5.webp" alt="G5-3" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image3.g5-480.webp 480w, media/images/image3.g5-800.webp 800w, media/images/image3.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image4.g5.webp" alt="G5-4" width="1123" height="1400" decoding="async" loading="lazy" data-srcset="media/images/image4.g5-480.webp 480w, media/images/image4.g5-800.webp 800w, media/images/image4.g5.webp 1123w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image5.g5.webp" alt="G5-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g5-480.webp 480w, media/images/image5.g5-800.webp 800w, media/images/image5.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image6.g5.webp" alt="G5-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g5-480.webp 480w, media/images/image6.g5-800.webp 800w, media/images/image6.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image7.g5.webp" alt="G5-7" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image7.g5-480.webp 480w, media/images/image7.g5-800.webp 800w, media/images/image7.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1124 / 1399" data-src="media/images/image1.g5.webp" alt="G5-1" width="1124" height="1399" decoding="async" loading="lazy" data-srcset="media/images/image1.g5-480.webp 480w, media/images/image1.g5-800.webp 800w, media/images/image1.g5.webp 1124w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image2.g5.webp" alt="G5-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g5-480.webp 480w, media/images/image2.g5-800.webp 800w, media/images/image2.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image3.g5.webp" alt="G5-3" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image3.g5-480.webp 480w, media/images/image3.g5-800.webp 800w, media/images/image3.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1123 / 1400" data-src="media/images/image4.g5.webp" alt="G5-4" width="1123" height="1400" decoding="async" loading="lazy" data-srcset="media/images/image4.g5-480.webp 480w, media/images/image4.g5-800.webp 800w, media/images/image4.g5.webp 1123w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image5.g5.webp" alt="G5-5" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image5.g5-480.webp 480w, media/images/image5.g5-800.webp 800w, media/images/image5.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image6.g5.webp" alt="G5-6" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image6.g5-480.webp 480w, media/images/image6.g5-800.webp 800w, media/images/image6.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image7.g5.webp" alt="G5-7" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image7.g5-480.webp 480w, media/images/image7.g5-800.webp 800w, media/images/image7.g5.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
@@ -650,12 +651,12 @@
             <div class="portfolio-card group relative transition-all duration-500 flex flex-col">
                 <div class="slider-mask" id="extra2-mask">
                     <div id="extra2-slider" class="slider-track">
-                        <div class="slide-item"><img data-src="media/images/image1.g6.webp" alt="G6-1" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image1.g6-480.webp 480w, media/images/image1.g6-800.webp 800w, media/images/image1.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image2.g6.webp" alt="G6-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g6-480.webp 480w, media/images/image2.g6-800.webp 800w, media/images/image2.g6.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image3.g6.webp" alt="G6-3" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image3.g6-480.webp 480w, media/images/image3.g6-800.webp 800w, media/images/image3.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image4.g6.webp" alt="G6-4" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image4.g6-480.webp 480w, media/images/image4.g6-800.webp 800w, media/images/image4.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image5.g6.webp" alt="G6-5" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image5.g6-480.webp 480w, media/images/image5.g6-800.webp 800w, media/images/image5.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
-                        <div class="slide-item"><img data-src="media/images/image6.g6.webp" alt="G6-6" width="1003" height="1568" decoding="async" loading="lazy" data-srcset="media/images/image6.g6-480.webp 480w, media/images/image6.g6-800.webp 800w, media/images/image6.g6.webp 1003w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1080 / 1350" data-src="media/images/image1.g6.webp" alt="G6-1" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image1.g6-480.webp 480w, media/images/image1.g6-800.webp 800w, media/images/image1.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1122 / 1402" data-src="media/images/image2.g6.webp" alt="G6-2" width="1122" height="1402" decoding="async" loading="lazy" data-srcset="media/images/image2.g6-480.webp 480w, media/images/image2.g6-800.webp 800w, media/images/image2.g6.webp 1122w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1080 / 1350" data-src="media/images/image3.g6.webp" alt="G6-3" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image3.g6-480.webp 480w, media/images/image3.g6-800.webp 800w, media/images/image3.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1080 / 1350" data-src="media/images/image4.g6.webp" alt="G6-4" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image4.g6-480.webp 480w, media/images/image4.g6-800.webp 800w, media/images/image4.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1080 / 1350" data-src="media/images/image5.g6.webp" alt="G6-5" width="1080" height="1350" decoding="async" loading="lazy" data-srcset="media/images/image5.g6-480.webp 480w, media/images/image5.g6-800.webp 800w, media/images/image5.g6.webp 1080w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
+                        <div class="slide-item"><img style="aspect-ratio: 1003 / 1568" data-src="media/images/image6.g6.webp" alt="G6-6" width="1003" height="1568" decoding="async" loading="lazy" data-srcset="media/images/image6.g6-480.webp 480w, media/images/image6.g6-800.webp 800w, media/images/image6.g6.webp 1003w" sizes="(min-width: 1280px) 344px, (min-width: 1024px) calc((100vw - 176px) / 3 - 24px), (min-width: 768px) calc((100vw - 152px) / 2 - 24px), calc(100vw - 72px)"></div>
                     </div>
                 </div>
 
@@ -699,7 +700,7 @@
                         <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
                         <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
                     </div>
-                    <video data-src="media/videos/reel1.mp4" data-poster="media/videos/reel1-poster.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                    <video data-src="media/videos/reel1.mp4" poster="media/videos/reel1-poster-640.webp" data-poster="media/videos/reel1-poster-640.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
                 </div>
             </div>
             <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto md:-translate-y-6">
@@ -708,7 +709,7 @@
                         <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
                         <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
                     </div>
-                    <video data-src="media/videos/reel2.mp4" data-poster="media/videos/reel2-poster.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                    <video data-src="media/videos/reel2.mp4" poster="media/videos/reel2-poster-640.webp" data-poster="media/videos/reel2-poster-640.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
                 </div>
             </div>
             <div class="iphone-17-pro p-3.5 w-full max-w-[310px] mx-auto">
@@ -717,7 +718,7 @@
                         <div class="w-2.5 h-2.5 rounded-full bg-[#181a22]"></div>
                         <div class="w-2 h-2 rounded-full bg-cyan-950"></div>
                     </div>
-                    <video data-src="media/videos/reel3.mp4" data-poster="media/videos/reel3-poster.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
+                    <video data-src="media/videos/reel3.mp4" poster="media/videos/reel3-poster-640.webp" data-poster="media/videos/reel3-poster-640.webp" preload="none" class="w-full h-full object-cover" autoplay muted loop playsinline></video>
                 </div>
             </div>
         </div>
@@ -757,7 +758,7 @@
             <div class="w-full flex justify-center">
                 <div class="ipad-mockup p-4 w-full max-w-[420px]">
                     <div class="bg-black rounded-[26px]">
-                        <img src="media/images/about.webp" alt="Tara Photo" class="artwork-image" width="1448" height="1086" decoding="async" loading="lazy" srcset="media/images/about-480.webp 480w, media/images/about-800.webp 800w, media/images/about.webp 1448w" sizes="(min-width: 480px) 378px, calc(100vw - 90px)">
+                        <img style="aspect-ratio: 1448 / 1086" src="media/images/about.webp" alt="Tara Photo" class="artwork-image" width="1448" height="1086" decoding="async" loading="lazy" srcset="media/images/about-480.webp 480w, media/images/about-800.webp 800w, media/images/about.webp 1448w" sizes="(min-width: 480px) 378px, calc(100vw - 90px)">
                         <div class="mt-3 bg-black/70 backdrop-blur-md py-1.5 px-3 rounded-xl border border-white/10 text-center">
                             <span class="text-xs font-bold text-cyan-400" data-en="Duhok, Iraq 🇮🇶" data-ar="دهوك، العراق 🇮🇶">Duhok, Iraq 🇮🇶</span>
                         </div>
@@ -828,9 +829,8 @@
         }, 1500);
 
         function loadArtwork(image) {
+            image.loading = 'eager';
             if (image.dataset.src) {
-                // IntersectionObserver has already deferred this request until needed.
-                image.loading = 'eager';
                 if (image.dataset.srcset) {
                     image.srcset = image.dataset.srcset;
                     delete image.dataset.srcset;
@@ -839,48 +839,178 @@
                 delete image.dataset.src;
             }
         }
+
+        const imageReadiness = new WeakMap();
+        function decodeArtwork(image) {
+            const cached = imageReadiness.get(image);
+            if (cached && (cached.pending || (image.complete && image.naturalWidth && cached.source === image.currentSrc))) return cached.promise;
+            loadArtwork(image);
+            const state = { pending: true, source: '', promise: null };
+            state.promise = new Promise(resolve => {
+                const finish = () => {
+                    image.removeEventListener('load', finish);
+                    image.removeEventListener('error', finish);
+                    resolve(image.complete && image.naturalWidth > 0);
+                };
+                image.addEventListener('load', finish);
+                image.addEventListener('error', finish);
+                if (image.complete) finish();
+            }).then(async loaded => {
+                if (!loaded) return false;
+                if (image.decode) {
+                    try { await image.decode(); }
+                    catch { return image.complete && image.naturalWidth > 0; }
+                }
+                return image.complete && image.naturalWidth > 0;
+            }).then(ready => {
+                state.pending = false;
+                state.source = image.currentSrc;
+                if (!ready) imageReadiness.delete(image);
+                return ready;
+            });
+            imageReadiness.set(image, state);
+            return state.promise;
+        }
+
+        // Critical media starts during the existing splash; it never extends dismissal.
+        const criticalMedia = Promise.all([...document.querySelectorAll('img[loading="eager"]')].map(decodeArtwork));
+        const warmupReady = Promise.race([criticalMedia, new Promise(resolve => setTimeout(resolve, 2200))]);
+        const idle = callback => window.requestIdleCallback
+            ? requestIdleCallback(callback, { timeout: 800 }) : setTimeout(callback, 100);
+        const warmQueue = [];
+        const queuedImages = new WeakSet();
+        let warmingImages = 0;
+        function drainWarmQueue() {
+            while (warmingImages < 2 && warmQueue.length) {
+                const image = warmQueue.shift();
+                warmingImages++;
+                decodeArtwork(image).finally(() => {
+                    warmingImages--;
+                    queuedImages.delete(image);
+                    drainWarmQueue();
+                });
+            }
+        }
+        function queueArtwork(image) {
+            if (queuedImages.has(image)) return;
+            queuedImages.add(image);
+            image.fetchPriority = 'low';
+            warmQueue.push(image);
+            drainWarmQueue();
+        }
+        function warmNeighbors(slider, index) {
+            const count = slider.children.length;
+            [index + 1, index - 1].forEach(i => queueArtwork(slider.children[(i + count) % count].querySelector('img')));
+        }
+        function warmSlider(slider) {
+            const index = Number(slider.dataset.activeIndex || 0);
+            decodeArtwork(slider.children[index].querySelector('img')).then(ready => {
+                if (ready) warmNeighbors(slider, index);
+            });
+        }
         const artworkObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
             entries.forEach(({ target: mask, isIntersecting }) => {
+                if (!isIntersecting) return;
                 const slider = mask.firstElementChild;
-                if (isIntersecting) loadArtwork(slider.children[Number(slider.dataset.activeIndex || 0)].querySelector('img'));
+                if (mask.getBoundingClientRect().top < innerHeight) warmSlider(slider);
+                else warmupReady.then(() => idle(() => {
+                    if (mask.getBoundingClientRect().top < innerHeight + 1200) warmSlider(slider);
+                }));
             });
-        }, { rootMargin: '300px 0px' }) : null;
+        }, { rootMargin: '1200px 0px' }) : null;
         document.querySelectorAll('.slider-track').forEach(slider => {
             if (artworkObserver) artworkObserver.observe(slider.parentElement);
-            else slider.querySelectorAll('img').forEach(loadArtwork);
+            else warmupReady.then(() => warmSlider(slider));
+        });
+        const upcomingImageObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+            entries.forEach(({ target: image, isIntersecting }) => {
+                if (!isIntersecting) return;
+                warmupReady.then(() => queueArtwork(image));
+                upcomingImageObserver.unobserve(image);
+            });
+        }, { rootMargin: '1200px 0px' }) : null;
+        document.querySelectorAll('img[loading="lazy"]:not(.slide-item img)').forEach(image => {
+            if (upcomingImageObserver) upcomingImageObserver.observe(image);
+            else warmupReady.then(() => queueArtwork(image));
         });
 
         function prepareSlide(slider, index) {
-            const image = slider.children[index].querySelector('img');
-            // Only the active image is in normal flow; other slides cannot affect artwork height.
             Array.from(slider.children).forEach((slide, slideIndex) => {
                 slide.style.setProperty('--slide-offset', `calc(${slideIndex * 100}% + ${slideIndex * 20}px)`);
                 slide.classList.toggle('is-active', slideIndex === index);
             });
             slider.dataset.activeIndex = index;
-            const bounds = slider.parentElement.getBoundingClientRect();
-            if (bounds.top < innerHeight + 300 && bounds.bottom > -300) loadArtwork(image);
-            if (window.ScrollTrigger) ScrollTrigger.refresh();
+        }
+        const slideRequests = new WeakMap();
+        function requestSlide(slider, index, dotsId) {
+            // Language changes must reposition the still-visible committed slide
+            // immediately, even when a different requested image is downloading.
+            const direction = document.documentElement.dir === 'rtl' ? -1 : 1;
+            if (slider.dataset.direction !== document.documentElement.dir) {
+                const visibleIndex = Number(slider.dataset.activeIndex || 0);
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(calc(${direction * visibleIndex * -100}% - ${direction * visibleIndex * 20}px))`;
+                slider.dataset.direction = document.documentElement.dir;
+            }
+            const token = {};
+            slideRequests.set(slider, token);
+            const image = slider.children[index].querySelector('img');
+            image.fetchPriority = 'auto';
+            decodeArtwork(image).then(ready => {
+                if (!ready || slideRequests.get(slider) !== token) return;
+                // Commit the decoded image, its natural height, and dots in one paint.
+                // Sliding across unloaded intermediate slides would reveal black frames.
+                slider.style.transition = 'none';
+                prepareSlide(slider, index);
+                const direction = document.documentElement.dir === 'rtl' ? -1 : 1;
+                slider.style.transform = `translateX(calc(${direction * index * -100}% - ${direction * index * 20}px))`;
+                updateDots(dotsId, index);
+                warmNeighbors(slider, index);
+                if (window.ScrollTrigger) ScrollTrigger.refresh();
+            });
         }
 
         function playReel(video) {
             video.play().catch(error => {
-                // Scrolling away can interrupt a pending play request normally.
                 if (error.name !== 'AbortError') video.controls = true;
             });
         }
+        function prepareReel(video) {
+            if (!video.getAttribute('src')) {
+                video.preload = 'auto';
+                video.src = video.dataset.src;
+                video.load();
+            }
+        }
+        const nearbyReels = new Set();
+        const reelWarmObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+            entries.forEach(({ target: video, isIntersecting }) => {
+                if (isIntersecting) {
+                    nearbyReels.add(video);
+                    if (scrollY > 0 || video.getBoundingClientRect().top < innerHeight) {
+                        warmupReady.then(() => prepareReel(video));
+                    }
+                } else nearbyReels.delete(video);
+            });
+        }, { rootMargin: '1600px 0px' }) : null;
+        window.addEventListener('scroll', () => {
+            warmupReady.then(() => nearbyReels.forEach(prepareReel));
+        }, { once: true, passive: true });
         const reelObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
             entries.forEach(({ target: video, isIntersecting }) => {
                 video.dataset.nearViewport = String(isIntersecting);
                 if (isIntersecting) {
-                    if (!video.src) { video.poster = video.dataset.poster; video.src = video.dataset.src; video.load(); }
+                    prepareReel(video);
                     if (!document.hidden) playReel(video);
                 } else video.pause();
             });
-        }, { rootMargin: '150px 0px' }) : null;
+        }, { rootMargin: '0px' }) : null;
         document.querySelectorAll('video[data-src]').forEach(video => {
+            // Autoplay is controlled by actual visibility, not by speculative warmup.
+            video.autoplay = false;
+            if (reelWarmObserver) reelWarmObserver.observe(video);
             if (reelObserver) reelObserver.observe(video);
-            else { video.poster = video.dataset.poster; video.src = video.dataset.src; video.controls = true; }
+            else { video.preload = 'metadata'; video.src = video.dataset.src; video.controls = true; }
         });
         document.addEventListener('visibilitychange', () => {
             document.querySelectorAll('video').forEach(video => {
@@ -1005,10 +1135,7 @@
         function updateBrandSlider() {
             const slider = document.getElementById('brand-slider');
             if (slider) {
-                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
-                slider.style.transform = `translateX(calc(${direction * currentBrandSlideIndex * -100}% - ${direction * currentBrandSlideIndex * 20}px))`;
-                prepareSlide(slider, currentBrandSlideIndex);
-                updateDots('brand-dots', currentBrandSlideIndex);
+                requestSlide(slider, currentBrandSlideIndex, 'brand-dots');
             }
         }
 
@@ -1019,10 +1146,7 @@
         function updateSlider() {
             const slider = document.getElementById('social-slider');
             if (slider) {
-                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
-                slider.style.transform = `translateX(calc(${direction * currentSlideIndex * -100}% - ${direction * currentSlideIndex * 20}px))`;
-                prepareSlide(slider, currentSlideIndex);
-                updateDots('social-dots', currentSlideIndex);
+                requestSlide(slider, currentSlideIndex, 'social-dots');
             }
         }
 
@@ -1033,10 +1157,7 @@
         function updateCreativeSlider() {
             const slider = document.getElementById('creative-slider');
             if (slider) {
-                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
-                slider.style.transform = `translateX(calc(${direction * currentCreativeIndex * -100}% - ${direction * currentCreativeIndex * 20}px))`;
-                prepareSlide(slider, currentCreativeIndex);
-                updateDots('creative-dots', currentCreativeIndex);
+                requestSlide(slider, currentCreativeIndex, 'creative-dots');
             }
         }
 
@@ -1047,10 +1168,7 @@
         function updateAdsSlider() {
             const slider = document.getElementById('ads-slider');
             if (slider) {
-                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
-                slider.style.transform = `translateX(calc(${direction * currentAdsIndex * -100}% - ${direction * currentAdsIndex * 20}px))`;
-                prepareSlide(slider, currentAdsIndex);
-                updateDots('ads-dots', currentAdsIndex);
+                requestSlide(slider, currentAdsIndex, 'ads-dots');
             }
         }
 
@@ -1061,10 +1179,7 @@
         function updateExtra1Slider() {
             const slider = document.getElementById('extra1-slider');
             if (slider) {
-                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
-                slider.style.transform = `translateX(calc(${direction * currentExtra1Index * -100}% - ${direction * currentExtra1Index * 20}px))`;
-                prepareSlide(slider, currentExtra1Index);
-                updateDots('extra1-dots', currentExtra1Index);
+                requestSlide(slider, currentExtra1Index, 'extra1-dots');
             }
         }
 
@@ -1075,10 +1190,7 @@
         function updateExtra2Slider() {
             const slider = document.getElementById('extra2-slider');
             if (slider) {
-                const direction = document.getElementById('html-root').getAttribute('dir') === 'rtl' ? -1 : 1;
-                slider.style.transform = `translateX(calc(${direction * currentExtra2Index * -100}% - ${direction * currentExtra2Index * 20}px))`;
-                prepareSlide(slider, currentExtra2Index);
-                updateDots('extra2-dots', currentExtra2Index);
+                requestSlide(slider, currentExtra2Index, 'extra2-dots');
             }
         }
 
