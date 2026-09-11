@@ -28,7 +28,7 @@ class Page(HTMLParser):
             raise ValueError('Inline event attributes are prohibited by CSP')
         if tag == 'script' and 'src' in attrs:
             self.scripts.append(attrs)
-        if tag in ('img', 'video', 'source', 'script') or (tag == 'link' and attrs.get('as') == 'image'):
+        if tag in ('img', 'video', 'source', 'script') or (tag == 'link' and attrs.get('as') in ('image', 'font')):
             for name in ('src', 'data-src', 'poster', 'data-poster', 'href'):
                 if attrs.get(name):
                     self.assets.add(attrs[name])
@@ -53,7 +53,7 @@ def build():
         path = Path(name)
         if path.is_absolute() or '..' in path.parts or path.parts[0] not in ('images', 'images2', 'media', 'assets'):
             raise ValueError('Unexpected public asset: ' + name)
-        if any(part.startswith('.') for part in path.parts) or path.suffix.lower() not in ('.png', '.jpg', '.jpeg', '.webp', '.mp4', '.js'):
+        if any(part.startswith('.') for part in path.parts) or path.suffix.lower() not in ('.png', '.jpg', '.jpeg', '.webp', '.avif', '.mp4', '.js', '.woff2'):
             raise ValueError('Unexpected public file type: ' + name)
         source = ROOT / path
         if not source.is_file() or source.resolve() != source.absolute():
@@ -80,6 +80,9 @@ def build():
         target = OUTPUT / media_names.get(name, name)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / name, target)
+
+    # Include the font's redistribution terms alongside the published font.
+    shutil.copyfile(ROOT / 'assets/fonts/OFL.txt', OUTPUT / 'assets/fonts/OFL.txt')
 
     inline_scripts = re.findall(r'<script\s*>([\s\S]*?)</script>', html)
     hashes = ["'sha256-" + base64.b64encode(hashlib.sha256(script.encode()).digest()).decode() + "'" for script in inline_scripts]
@@ -109,6 +112,9 @@ def build():
     # Every published media filename above includes its content digest.
     for route in ('/images/*', '/images2/*', '/media/*'):
         lines += ['', route, '  Cache-Control: public, max-age=31536000, immutable']
+    for name, published in media_names.items():
+        if name.endswith('.woff2'):
+            lines += ['', '/' + published, '  Cache-Control: public, max-age=31536000, immutable']
     for script in page.scripts:
         lines += ['', '/' + script['src'], '  Cache-Control: public, max-age=31536000, immutable']
     (OUTPUT / '_headers').write_text('\n'.join(lines) + '\n')

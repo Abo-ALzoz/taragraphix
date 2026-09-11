@@ -1,0 +1,1115 @@
+{
+  "scope": "Referenced published media bytes, including all responsive sizes and both formats. Originals and superseded source variants retained; source-directory disk usage is not reduced.",
+  "before": {
+    "totals": {
+      "images": 80837026,
+      "videos": 11480314,
+      "all_source_media": 195095550
+    },
+    "assets": [
+      {
+        "path": "images/first.jpg",
+        "bytes": 501216
+      },
+      {
+        "path": "images/image1.g3.png",
+        "bytes": 308873
+      },
+      {
+        "path": "images/image2.g3.png",
+        "bytes": 254310
+      },
+      {
+        "path": "images/image3.g3.png",
+        "bytes": 274448
+      },
+      {
+        "path": "images/image4.g3.png",
+        "bytes": 315249
+      },
+      {
+        "path": "images/image5.g3.png",
+        "bytes": 315147
+      },
+      {
+        "path": "images/image6.g3.png",
+        "bytes": 306583
+      },
+      {
+        "path": "media/images/about-480.webp",
+        "bytes": 157938
+      },
+      {
+        "path": "media/images/about-800.webp",
+        "bytes": 414682
+      },
+      {
+        "path": "media/images/about.webp",
+        "bytes": 1365986
+      },
+      {
+        "path": "media/images/first-480.webp",
+        "bytes": 105158
+      },
+      {
+        "path": "media/images/first-800.webp",
+        "bytes": 278842
+      },
+      {
+        "path": "media/images/image1.g1-480.webp",
+        "bytes": 218624
+      },
+      {
+        "path": "media/images/image1.g1-800.webp",
+        "bytes": 587762
+      },
+      {
+        "path": "media/images/image1.g1.webp",
+        "bytes": 1190852
+      },
+      {
+        "path": "media/images/image1.g2-480.webp",
+        "bytes": 253068
+      },
+      {
+        "path": "media/images/image1.g2-800.webp",
+        "bytes": 699874
+      },
+      {
+        "path": "media/images/image1.g2.webp",
+        "bytes": 1470556
+      },
+      {
+        "path": "media/images/image1.g3-480.webp",
+        "bytes": 204422
+      },
+      {
+        "path": "media/images/image1.g4-480.webp",
+        "bytes": 320164
+      },
+      {
+        "path": "media/images/image1.g4-800.webp",
+        "bytes": 844820
+      },
+      {
+        "path": "media/images/image1.g4.webp",
+        "bytes": 1727980
+      },
+      {
+        "path": "media/images/image1.g5-480.webp",
+        "bytes": 273956
+      },
+      {
+        "path": "media/images/image1.g5-800.webp",
+        "bytes": 778402
+      },
+      {
+        "path": "media/images/image1.g5.webp",
+        "bytes": 1682876
+      },
+      {
+        "path": "media/images/image1.g6-480.webp",
+        "bytes": 227198
+      },
+      {
+        "path": "media/images/image1.g6-800.webp",
+        "bytes": 627516
+      },
+      {
+        "path": "media/images/image1.g6.webp",
+        "bytes": 1193610
+      },
+      {
+        "path": "media/images/image2.g1-480.webp",
+        "bytes": 226338
+      },
+      {
+        "path": "media/images/image2.g1-800.webp",
+        "bytes": 596664
+      },
+      {
+        "path": "media/images/image2.g1.webp",
+        "bytes": 1151536
+      },
+      {
+        "path": "media/images/image2.g2-480.webp",
+        "bytes": 273792
+      },
+      {
+        "path": "media/images/image2.g2-800.webp",
+        "bytes": 749716
+      },
+      {
+        "path": "media/images/image2.g2.webp",
+        "bytes": 1578462
+      },
+      {
+        "path": "media/images/image2.g3-480.webp",
+        "bytes": 176362
+      },
+      {
+        "path": "media/images/image2.g4-480.webp",
+        "bytes": 270548
+      },
+      {
+        "path": "media/images/image2.g4-800.webp",
+        "bytes": 731784
+      },
+      {
+        "path": "media/images/image2.g4.webp",
+        "bytes": 1535128
+      },
+      {
+        "path": "media/images/image2.g5-480.webp",
+        "bytes": 268456
+      },
+      {
+        "path": "media/images/image2.g5-800.webp",
+        "bytes": 731216
+      },
+      {
+        "path": "media/images/image2.g5.webp",
+        "bytes": 1538694
+      },
+      {
+        "path": "media/images/image2.g6-480.webp",
+        "bytes": 257244
+      },
+      {
+        "path": "media/images/image2.g6-800.webp",
+        "bytes": 665308
+      },
+      {
+        "path": "media/images/image2.g6.webp",
+        "bytes": 1269734
+      },
+      {
+        "path": "media/images/image3.g1-480.webp",
+        "bytes": 252578
+      },
+      {
+        "path": "media/images/image3.g1-800.webp",
+        "bytes": 682208
+      },
+      {
+        "path": "media/images/image3.g1.webp",
+        "bytes": 1256006
+      },
+      {
+        "path": "media/images/image3.g2-480.webp",
+        "bytes": 286692
+      },
+      {
+        "path": "media/images/image3.g2-800.webp",
+        "bytes": 787672
+      },
+      {
+        "path": "media/images/image3.g2.webp",
+        "bytes": 1560700
+      },
+      {
+        "path": "media/images/image3.g3-480.webp",
+        "bytes": 185066
+      },
+      {
+        "path": "media/images/image3.g4-480.webp",
+        "bytes": 296880
+      },
+      {
+        "path": "media/images/image3.g4-800.webp",
+        "bytes": 804338
+      },
+      {
+        "path": "media/images/image3.g4.webp",
+        "bytes": 1589000
+      },
+      {
+        "path": "media/images/image3.g5-480.webp",
+        "bytes": 287330
+      },
+      {
+        "path": "media/images/image3.g5-800.webp",
+        "bytes": 808770
+      },
+      {
+        "path": "media/images/image3.g5.webp",
+        "bytes": 1707864
+      },
+      {
+        "path": "media/images/image3.g6-480.webp",
+        "bytes": 209224
+      },
+      {
+        "path": "media/images/image3.g6-800.webp",
+        "bytes": 595414
+      },
+      {
+        "path": "media/images/image3.g6.webp",
+        "bytes": 1128708
+      },
+      {
+        "path": "media/images/image4.g1-480.webp",
+        "bytes": 252904
+      },
+      {
+        "path": "media/images/image4.g1-800.webp",
+        "bytes": 670982
+      },
+      {
+        "path": "media/images/image4.g1.webp",
+        "bytes": 1346016
+      },
+      {
+        "path": "media/images/image4.g2-480.webp",
+        "bytes": 250548
+      },
+      {
+        "path": "media/images/image4.g2-800.webp",
+        "bytes": 681220
+      },
+      {
+        "path": "media/images/image4.g2.webp",
+        "bytes": 1344624
+      },
+      {
+        "path": "media/images/image4.g3-480.webp",
+        "bytes": 198324
+      },
+      {
+        "path": "media/images/image4.g4-480.webp",
+        "bytes": 290904
+      },
+      {
+        "path": "media/images/image4.g4-800.webp",
+        "bytes": 772810
+      },
+      {
+        "path": "media/images/image4.g4.webp",
+        "bytes": 1505078
+      },
+      {
+        "path": "media/images/image4.g5-480.webp",
+        "bytes": 270166
+      },
+      {
+        "path": "media/images/image4.g5-800.webp",
+        "bytes": 755106
+      },
+      {
+        "path": "media/images/image4.g5.webp",
+        "bytes": 1614038
+      },
+      {
+        "path": "media/images/image4.g6-480.webp",
+        "bytes": 223786
+      },
+      {
+        "path": "media/images/image4.g6-800.webp",
+        "bytes": 622050
+      },
+      {
+        "path": "media/images/image4.g6.webp",
+        "bytes": 1187256
+      },
+      {
+        "path": "media/images/image5.g1-480.webp",
+        "bytes": 227458
+      },
+      {
+        "path": "media/images/image5.g1-800.webp",
+        "bytes": 600852
+      },
+      {
+        "path": "media/images/image5.g1.webp",
+        "bytes": 1198074
+      },
+      {
+        "path": "media/images/image5.g2-480.webp",
+        "bytes": 243538
+      },
+      {
+        "path": "media/images/image5.g2-800.webp",
+        "bytes": 663978
+      },
+      {
+        "path": "media/images/image5.g2.webp",
+        "bytes": 1325568
+      },
+      {
+        "path": "media/images/image5.g3-480.webp",
+        "bytes": 211372
+      },
+      {
+        "path": "media/images/image5.g4-480.webp",
+        "bytes": 265570
+      },
+      {
+        "path": "media/images/image5.g4-800.webp",
+        "bytes": 723092
+      },
+      {
+        "path": "media/images/image5.g4.webp",
+        "bytes": 1435174
+      },
+      {
+        "path": "media/images/image5.g5-480.webp",
+        "bytes": 264866
+      },
+      {
+        "path": "media/images/image5.g5-800.webp",
+        "bytes": 748128
+      },
+      {
+        "path": "media/images/image5.g5.webp",
+        "bytes": 1580784
+      },
+      {
+        "path": "media/images/image5.g6-480.webp",
+        "bytes": 211722
+      },
+      {
+        "path": "media/images/image5.g6-800.webp",
+        "bytes": 601100
+      },
+      {
+        "path": "media/images/image5.g6.webp",
+        "bytes": 1145580
+      },
+      {
+        "path": "media/images/image6.g1-480.webp",
+        "bytes": 239226
+      },
+      {
+        "path": "media/images/image6.g1-800.webp",
+        "bytes": 661180
+      },
+      {
+        "path": "media/images/image6.g1.webp",
+        "bytes": 1348306
+      },
+      {
+        "path": "media/images/image6.g2-480.webp",
+        "bytes": 238356
+      },
+      {
+        "path": "media/images/image6.g2-800.webp",
+        "bytes": 626780
+      },
+      {
+        "path": "media/images/image6.g2.webp",
+        "bytes": 1239256
+      },
+      {
+        "path": "media/images/image6.g3-480.webp",
+        "bytes": 112784
+      },
+      {
+        "path": "media/images/image6.g3-800.webp",
+        "bytes": 300194
+      },
+      {
+        "path": "media/images/image6.g4-480.webp",
+        "bytes": 287868
+      },
+      {
+        "path": "media/images/image6.g4-800.webp",
+        "bytes": 770322
+      },
+      {
+        "path": "media/images/image6.g4.webp",
+        "bytes": 1503964
+      },
+      {
+        "path": "media/images/image6.g5-480.webp",
+        "bytes": 285258
+      },
+      {
+        "path": "media/images/image6.g5-800.webp",
+        "bytes": 771620
+      },
+      {
+        "path": "media/images/image6.g5.webp",
+        "bytes": 1621490
+      },
+      {
+        "path": "media/images/image6.g6-480.webp",
+        "bytes": 293570
+      },
+      {
+        "path": "media/images/image6.g6-800.webp",
+        "bytes": 790308
+      },
+      {
+        "path": "media/images/image6.g6.webp",
+        "bytes": 1312980
+      },
+      {
+        "path": "media/images/image7.g5-480.webp",
+        "bytes": 271826
+      },
+      {
+        "path": "media/images/image7.g5-800.webp",
+        "bytes": 768030
+      },
+      {
+        "path": "media/images/image7.g5.webp",
+        "bytes": 1627896
+      },
+      {
+        "path": "media/images/logo-300.webp",
+        "bytes": 31418
+      },
+      {
+        "path": "media/images/logo-600.webp",
+        "bytes": 116978
+      },
+      {
+        "path": "media/images/logo.webp",
+        "bytes": 628608
+      },
+      {
+        "path": "media/videos/reel1-poster-640.webp",
+        "bytes": 51890
+      },
+      {
+        "path": "media/videos/reel1.mp4",
+        "bytes": 4326180,
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "mime_codec_string": "avc1.640032",
+              "width": 1080,
+              "height": 1920,
+              "coded_width": 1080,
+              "coded_height": 1920,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 50,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/15360",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 69632,
+              "duration": "4.533333",
+              "bit_rate": "7510611",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "136",
+              "extradata_size": 50,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "encoder": "Lavc63.1.101 libx264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "mime_codec_string": "mp4a.40.2",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 1652,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 199626,
+              "duration": "4.526667",
+              "bit_rate": "111844",
+              "nb_frames": "197",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "Core Media Audio"
+              }
+            }
+          ],
+          "format": {
+            "filename": "media/videos/reel1.mp4",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "4.533333",
+            "size": "4326180",
+            "bit_rate": "7634435",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "isom",
+              "minor_version": "512",
+              "compatible_brands": "isomiso2avc1mp41",
+              "encoder": "Lavf63.1.101"
+            }
+          }
+        },
+        "faststart": true
+      },
+      {
+        "path": "media/videos/reel2-poster-640.webp",
+        "bytes": 83216
+      },
+      {
+        "path": "media/videos/reel2.mp4",
+        "bytes": 1494304,
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "mime_codec_string": "avc1.640033",
+              "width": 940,
+              "height": 1672,
+              "coded_width": 940,
+              "coded_height": 1672,
+              "has_b_frames": 2,
+              "pix_fmt": "yuvj420p",
+              "level": 51,
+              "color_range": "pc",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "150/1",
+              "avg_frame_rate": "11550/379",
+              "time_base": "1/19200",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 48512,
+              "duration": "2.526667",
+              "bit_rate": "4725451",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "77",
+              "extradata_size": 50,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "encoder": "Lavc63.1.101 libx264"
+              }
+            }
+          ],
+          "format": {
+            "filename": "media/videos/reel2.mp4",
+            "nb_streams": 1,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "2.526667",
+            "size": "1494304",
+            "bit_rate": "4731304",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "isom",
+              "minor_version": "512",
+              "compatible_brands": "isomiso2avc1mp41",
+              "encoder": "Lavf63.1.101"
+            }
+          }
+        },
+        "faststart": true
+      },
+      {
+        "path": "media/videos/reel3-poster-640.webp",
+        "bytes": 61490
+      },
+      {
+        "path": "media/videos/reel3.mp4",
+        "bytes": 5659830,
+        "probe": {
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "mime_codec_string": "avc1.640032",
+              "width": 1080,
+              "height": 1920,
+              "coded_width": 1080,
+              "coded_height": 1920,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 50,
+              "color_range": "tv",
+              "color_space": "bt709",
+              "color_transfer": "bt709",
+              "color_primaries": "bt709",
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "30/1",
+              "avg_frame_rate": "30/1",
+              "time_base": "1/15360",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 77824,
+              "duration": "5.066667",
+              "bit_rate": "8812299",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "152",
+              "extradata_size": 50,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "Core Media Video",
+                "encoder": "Lavc63.1.101 libx264"
+              }
+            },
+            {
+              "index": 1,
+              "codec_name": "aac",
+              "codec_long_name": "AAC (Advanced Audio Coding)",
+              "profile": "LC",
+              "codec_type": "audio",
+              "codec_tag_string": "mp4a",
+              "codec_tag": "0x6134706d",
+              "mime_codec_string": "mp4a.40.2",
+              "sample_fmt": "fltp",
+              "sample_rate": "44100",
+              "channels": 2,
+              "channel_layout": "stereo",
+              "bits_per_sample": 0,
+              "initial_padding": 1304,
+              "id": "0x2",
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/44100",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 223367,
+              "duration": "5.065011",
+              "bit_rate": "112548",
+              "nb_frames": "220",
+              "extradata_size": 2,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "Core Media Audio"
+              }
+            }
+          ],
+          "format": {
+            "filename": "media/videos/reel3.mp4",
+            "nb_streams": 2,
+            "nb_programs": 0,
+            "nb_stream_groups": 0,
+            "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+            "format_long_name": "QuickTime / MOV",
+            "start_time": "0.000000",
+            "duration": "5.066667",
+            "size": "5659830",
+            "bit_rate": "8936573",
+            "probe_score": 100,
+            "tags": {
+              "major_brand": "isom",
+              "minor_version": "512",
+              "compatible_brands": "isomiso2avc1mp41",
+              "encoder": "Lavf63.1.101"
+            }
+          }
+        },
+        "faststart": true
+      }
+    ],
+    "duplicates": []
+  },
+  "after_totals": {
+    "images": 18741777,
+    "videos": 7276407
+  },
+  "verification": {
+    "viewport": "390x844",
+    "device_pixel_ratio": 1,
+    "download_bytes_per_second": 500000,
+    "latency_ms": 80,
+    "result": {
+      "hold": 3966.099999997765,
+      "epoch": 1789158303550.9,
+      "covers": 6,
+      "fetched": 37,
+      "decoded": 37,
+      "maxReached": false,
+      "videoSources": 1,
+      "bytesBeforeReveal": 1755056,
+      "adjacentTargets": [
+        {
+          "slider": "brand-slider",
+          "index": 1,
+          "url": "http://localhost:8768/media/gallery/image2.g1-360.6b9017e5ba76046e1c65.avif",
+          "ready": true
+        },
+        {
+          "slider": "brand-slider",
+          "index": 5,
+          "url": "http://localhost:8768/media/gallery/image6.g1-360.62a45db1493faf5b4d07.avif",
+          "ready": true
+        },
+        {
+          "slider": "social-slider",
+          "index": 1,
+          "url": "http://localhost:8768/media/gallery/image2.g2-360.5a19a4fbbb81342fd5de.avif",
+          "ready": true
+        },
+        {
+          "slider": "social-slider",
+          "index": 5,
+          "url": "http://localhost:8768/media/gallery/image6.g2-360.da591c001eee9e3355b2.avif",
+          "ready": true
+        },
+        {
+          "slider": "creative-slider",
+          "index": 1,
+          "url": "http://localhost:8768/media/gallery/image2.g3-360.0413e17eedee00772dff.avif",
+          "ready": true
+        },
+        {
+          "slider": "creative-slider",
+          "index": 5,
+          "url": "http://localhost:8768/media/gallery/image6.g3-360.5493cf6883ec50c818fd.avif",
+          "ready": true
+        },
+        {
+          "slider": "ads-slider",
+          "index": 1,
+          "url": "http://localhost:8768/media/gallery/image2.g4-360.eba2221b7e8bdc0850aa.avif",
+          "ready": true
+        },
+        {
+          "slider": "ads-slider",
+          "index": 5,
+          "url": "http://localhost:8768/media/gallery/image6.g4-360.2d29ffbc7a901d8a1cc5.avif",
+          "ready": true
+        },
+        {
+          "slider": "extra1-slider",
+          "index": 1,
+          "url": "http://localhost:8768/media/gallery/image2.g5-360.ef6b6732140d29b83553.avif",
+          "ready": true
+        },
+        {
+          "slider": "extra1-slider",
+          "index": 6,
+          "url": "http://localhost:8768/media/gallery/image7.g5-360.1c4a680d818ac572eccf.avif",
+          "ready": true
+        },
+        {
+          "slider": "extra2-slider",
+          "index": 1,
+          "url": "http://localhost:8768/media/gallery/image2.g6-360.f808a3228e97302a297b.avif",
+          "ready": true
+        },
+        {
+          "slider": "extra2-slider",
+          "index": 5,
+          "url": "http://localhost:8768/media/gallery/image6.g6-360.4ac22c41434af6fa11f7.avif",
+          "ready": true
+        }
+      ],
+      "newAdjacentRequests": [],
+      "errors": []
+    }
+  },
+  "image_quality_360px_ssim": [
+    {
+      "source": "images/image1.g1.png",
+      "ssim": 0.994709
+    },
+    {
+      "source": "images/image1.g2.png",
+      "ssim": 0.990018
+    },
+    {
+      "source": "images/image1.g3.png",
+      "ssim": 0.986011
+    },
+    {
+      "source": "images/image1.g4.png",
+      "ssim": 0.9934
+    },
+    {
+      "source": "images/image1.g5.png",
+      "ssim": 0.990378
+    },
+    {
+      "source": "images/image1.g6.png",
+      "ssim": 0.993792
+    },
+    {
+      "source": "images/image2.g1.png",
+      "ssim": 0.995669
+    },
+    {
+      "source": "images/image2.g2.png",
+      "ssim": 0.990385
+    },
+    {
+      "source": "images/image2.g3.png",
+      "ssim": 0.994619
+    },
+    {
+      "source": "images/image2.g4.png",
+      "ssim": 0.991885
+    },
+    {
+      "source": "images/image2.g5.png",
+      "ssim": 0.992738
+    },
+    {
+      "source": "images/image2.g6.png",
+      "ssim": 0.992353
+    },
+    {
+      "source": "images/image3.g1.png",
+      "ssim": 0.994128
+    },
+    {
+      "source": "images/image3.g2.png",
+      "ssim": 0.987664
+    },
+    {
+      "source": "images/image3.g3.png",
+      "ssim": 0.991659
+    },
+    {
+      "source": "images/image3.g4.png",
+      "ssim": 0.993915
+    },
+    {
+      "source": "images/image3.g5.png",
+      "ssim": 0.991062
+    },
+    {
+      "source": "images/image3.g6.png",
+      "ssim": 0.993143
+    },
+    {
+      "source": "images/image4.g1.png",
+      "ssim": 0.990337
+    },
+    {
+      "source": "images/image4.g2.png",
+      "ssim": 0.991633
+    },
+    {
+      "source": "images/image4.g3.png",
+      "ssim": 0.992436
+    },
+    {
+      "source": "images/image4.g4.png",
+      "ssim": 0.989393
+    },
+    {
+      "source": "images/image4.g5.png",
+      "ssim": 0.991564
+    },
+    {
+      "source": "images/image4.g6.png",
+      "ssim": 0.992936
+    },
+    {
+      "source": "images/image5.g1.png",
+      "ssim": 0.993797
+    },
+    {
+      "source": "images/image5.g2.png",
+      "ssim": 0.9937
+    },
+    {
+      "source": "images/image5.g3.png",
+      "ssim": 0.991573
+    },
+    {
+      "source": "images/image5.g4.png",
+      "ssim": 0.992863
+    },
+    {
+      "source": "images/image5.g5.png",
+      "ssim": 0.990908
+    },
+    {
+      "source": "images/image5.g6.png",
+      "ssim": 0.992966
+    },
+    {
+      "source": "images/image6.g1.png",
+      "ssim": 0.993552
+    },
+    {
+      "source": "images/image6.g2.png",
+      "ssim": 0.991613
+    },
+    {
+      "source": "images/image6.g3.png",
+      "ssim": 0.99364
+    },
+    {
+      "source": "images/image6.g4.png",
+      "ssim": 0.989311
+    },
+    {
+      "source": "images/image6.g5.png",
+      "ssim": 0.98988
+    },
+    {
+      "source": "images/image6.g6.png",
+      "ssim": 0.993226
+    },
+    {
+      "source": "images/image7.g5.png",
+      "ssim": 0.990909
+    }
+  ],
+  "video_ssim": {
+    "reel1": 0.995675,
+    "reel2": 0.996807,
+    "reel3": 0.993686
+  },
+  "visual_review": "Representative artwork from each of six groups and frames from all three reels compared. Slight fine-texture smoothing in close comparisons; no obvious text blur at normal display size.",
+  "removed_source_files": []
+}

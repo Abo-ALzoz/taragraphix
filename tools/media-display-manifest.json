@@ -1,0 +1,1792 @@
+{
+  "gallery": [
+    {
+      "source": "images/image1.g1.png",
+      "original_bytes": 2202382,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image1.g1-360.webp",
+          "width": 360,
+          "bytes": 19996
+        },
+        {
+          "path": "media/gallery/image1.g1-360.avif",
+          "width": 360,
+          "bytes": 14292
+        },
+        {
+          "path": "media/gallery/image1.g1-720.webp",
+          "width": 720,
+          "bytes": 51352
+        },
+        {
+          "path": "media/gallery/image1.g1-720.avif",
+          "width": 720,
+          "bytes": 36124
+        },
+        {
+          "path": "media/gallery/image1.g1-1122.webp",
+          "width": 1122,
+          "bytes": 104710
+        },
+        {
+          "path": "media/gallery/image1.g1-1122.avif",
+          "width": 1122,
+          "bytes": 63495
+        }
+      ]
+    },
+    {
+      "source": "images/image1.g2.png",
+      "original_bytes": 2912209,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image1.g2-360.webp",
+          "width": 360,
+          "bytes": 21410
+        },
+        {
+          "path": "media/gallery/image1.g2-360.avif",
+          "width": 360,
+          "bytes": 14524
+        },
+        {
+          "path": "media/gallery/image1.g2-720.webp",
+          "width": 720,
+          "bytes": 66166
+        },
+        {
+          "path": "media/gallery/image1.g2-720.avif",
+          "width": 720,
+          "bytes": 45701
+        },
+        {
+          "path": "media/gallery/image1.g2-1122.webp",
+          "width": 1122,
+          "bytes": 172128
+        },
+        {
+          "path": "media/gallery/image1.g2-1122.avif",
+          "width": 1122,
+          "bytes": 98107
+        }
+      ]
+    },
+    {
+      "source": "images/image1.g3.png",
+      "original_bytes": 308873,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image1.g3-360.webp",
+          "width": 360,
+          "bytes": 14988
+        },
+        {
+          "path": "media/gallery/image1.g3-360.avif",
+          "width": 360,
+          "bytes": 11799
+        },
+        {
+          "path": "media/gallery/image1.g3-720.webp",
+          "width": 720,
+          "bytes": 46954
+        },
+        {
+          "path": "media/gallery/image1.g3-720.avif",
+          "width": 720,
+          "bytes": 39200
+        },
+        {
+          "path": "media/gallery/image1.g3-1122.webp",
+          "width": 1122,
+          "bytes": 117592
+        },
+        {
+          "path": "media/gallery/image1.g3-1122.avif",
+          "width": 1122,
+          "bytes": 87798
+        }
+      ]
+    },
+    {
+      "source": "images/image1.g4.png",
+      "original_bytes": 2947828,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image1.g4-360.webp",
+          "width": 360,
+          "bytes": 40086
+        },
+        {
+          "path": "media/gallery/image1.g4-360.avif",
+          "width": 360,
+          "bytes": 33297
+        },
+        {
+          "path": "media/gallery/image1.g4-720.webp",
+          "width": 720,
+          "bytes": 121174
+        },
+        {
+          "path": "media/gallery/image1.g4-720.avif",
+          "width": 720,
+          "bytes": 98501
+        },
+        {
+          "path": "media/gallery/image1.g4-1122.webp",
+          "width": 1122,
+          "bytes": 261660
+        },
+        {
+          "path": "media/gallery/image1.g4-1122.avif",
+          "width": 1122,
+          "bytes": 177121
+        }
+      ]
+    },
+    {
+      "source": "images/image1.g5.png",
+      "original_bytes": 2944444,
+      "width": 1124,
+      "height": 1399,
+      "variants": [
+        {
+          "path": "media/gallery/image1.g5-360.webp",
+          "width": 360,
+          "bytes": 21274
+        },
+        {
+          "path": "media/gallery/image1.g5-360.avif",
+          "width": 360,
+          "bytes": 15384
+        },
+        {
+          "path": "media/gallery/image1.g5-720.webp",
+          "width": 720,
+          "bytes": 59640
+        },
+        {
+          "path": "media/gallery/image1.g5-720.avif",
+          "width": 720,
+          "bytes": 38736
+        },
+        {
+          "path": "media/gallery/image1.g5-1124.webp",
+          "width": 1124,
+          "bytes": 202704
+        },
+        {
+          "path": "media/gallery/image1.g5-1124.avif",
+          "width": 1124,
+          "bytes": 101266
+        }
+      ]
+    },
+    {
+      "source": "images/image1.g6.png",
+      "original_bytes": 2334543,
+      "width": 1080,
+      "height": 1350,
+      "variants": [
+        {
+          "path": "media/gallery/image1.g6-360.webp",
+          "width": 360,
+          "bytes": 23886
+        },
+        {
+          "path": "media/gallery/image1.g6-360.avif",
+          "width": 360,
+          "bytes": 16998
+        },
+        {
+          "path": "media/gallery/image1.g6-720.webp",
+          "width": 720,
+          "bytes": 61222
+        },
+        {
+          "path": "media/gallery/image1.g6-720.avif",
+          "width": 720,
+          "bytes": 41854
+        },
+        {
+          "path": "media/gallery/image1.g6-1080.webp",
+          "width": 1080,
+          "bytes": 108560
+        },
+        {
+          "path": "media/gallery/image1.g6-1080.avif",
+          "width": 1080,
+          "bytes": 65543
+        }
+      ]
+    },
+    {
+      "source": "images/image2.g1.png",
+      "original_bytes": 2186336,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image2.g1-360.webp",
+          "width": 360,
+          "bytes": 22130
+        },
+        {
+          "path": "media/gallery/image2.g1-360.avif",
+          "width": 360,
+          "bytes": 16459
+        },
+        {
+          "path": "media/gallery/image2.g1-720.webp",
+          "width": 720,
+          "bytes": 59554
+        },
+        {
+          "path": "media/gallery/image2.g1-720.avif",
+          "width": 720,
+          "bytes": 41427
+        },
+        {
+          "path": "media/gallery/image2.g1-1122.webp",
+          "width": 1122,
+          "bytes": 118642
+        },
+        {
+          "path": "media/gallery/image2.g1-1122.avif",
+          "width": 1122,
+          "bytes": 69587
+        }
+      ]
+    },
+    {
+      "source": "images/image2.g2.png",
+      "original_bytes": 2906413,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image2.g2-360.webp",
+          "width": 360,
+          "bytes": 28734
+        },
+        {
+          "path": "media/gallery/image2.g2-360.avif",
+          "width": 360,
+          "bytes": 22272
+        },
+        {
+          "path": "media/gallery/image2.g2-720.webp",
+          "width": 720,
+          "bytes": 87226
+        },
+        {
+          "path": "media/gallery/image2.g2-720.avif",
+          "width": 720,
+          "bytes": 64055
+        },
+        {
+          "path": "media/gallery/image2.g2-1122.webp",
+          "width": 1122,
+          "bytes": 211230
+        },
+        {
+          "path": "media/gallery/image2.g2-1122.avif",
+          "width": 1122,
+          "bytes": 118515
+        }
+      ]
+    },
+    {
+      "source": "images/image2.g3.png",
+      "original_bytes": 254310,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image2.g3-360.webp",
+          "width": 360,
+          "bytes": 16346
+        },
+        {
+          "path": "media/gallery/image2.g3-360.avif",
+          "width": 360,
+          "bytes": 13437
+        },
+        {
+          "path": "media/gallery/image2.g3-720.webp",
+          "width": 720,
+          "bytes": 43012
+        },
+        {
+          "path": "media/gallery/image2.g3-720.avif",
+          "width": 720,
+          "bytes": 34549
+        },
+        {
+          "path": "media/gallery/image2.g3-1122.webp",
+          "width": 1122,
+          "bytes": 85822
+        },
+        {
+          "path": "media/gallery/image2.g3-1122.avif",
+          "width": 1122,
+          "bytes": 62520
+        }
+      ]
+    },
+    {
+      "source": "images/image2.g4.png",
+      "original_bytes": 2781437,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image2.g4-360.webp",
+          "width": 360,
+          "bytes": 28394
+        },
+        {
+          "path": "media/gallery/image2.g4-360.avif",
+          "width": 360,
+          "bytes": 21306
+        },
+        {
+          "path": "media/gallery/image2.g4-720.webp",
+          "width": 720,
+          "bytes": 84824
+        },
+        {
+          "path": "media/gallery/image2.g4-720.avif",
+          "width": 720,
+          "bytes": 63868
+        },
+        {
+          "path": "media/gallery/image2.g4-1122.webp",
+          "width": 1122,
+          "bytes": 196418
+        },
+        {
+          "path": "media/gallery/image2.g4-1122.avif",
+          "width": 1122,
+          "bytes": 123974
+        }
+      ]
+    },
+    {
+      "source": "images/image2.g5.png",
+      "original_bytes": 2784491,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image2.g5-360.webp",
+          "width": 360,
+          "bytes": 28108
+        },
+        {
+          "path": "media/gallery/image2.g5-360.avif",
+          "width": 360,
+          "bytes": 20701
+        },
+        {
+          "path": "media/gallery/image2.g5-720.webp",
+          "width": 720,
+          "bytes": 74244
+        },
+        {
+          "path": "media/gallery/image2.g5-720.avif",
+          "width": 720,
+          "bytes": 52409
+        },
+        {
+          "path": "media/gallery/image2.g5-1122.webp",
+          "width": 1122,
+          "bytes": 154100
+        },
+        {
+          "path": "media/gallery/image2.g5-1122.avif",
+          "width": 1122,
+          "bytes": 88784
+        }
+      ]
+    },
+    {
+      "source": "images/image2.g6.png",
+      "original_bytes": 2597422,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image2.g6-360.webp",
+          "width": 360,
+          "bytes": 30360
+        },
+        {
+          "path": "media/gallery/image2.g6-360.avif",
+          "width": 360,
+          "bytes": 23107
+        },
+        {
+          "path": "media/gallery/image2.g6-720.webp",
+          "width": 720,
+          "bytes": 73096
+        },
+        {
+          "path": "media/gallery/image2.g6-720.avif",
+          "width": 720,
+          "bytes": 54853
+        },
+        {
+          "path": "media/gallery/image2.g6-1122.webp",
+          "width": 1122,
+          "bytes": 141494
+        },
+        {
+          "path": "media/gallery/image2.g6-1122.avif",
+          "width": 1122,
+          "bytes": 90306
+        }
+      ]
+    },
+    {
+      "source": "images/image3.g1.png",
+      "original_bytes": 2328140,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image3.g1-360.webp",
+          "width": 360,
+          "bytes": 26824
+        },
+        {
+          "path": "media/gallery/image3.g1-360.avif",
+          "width": 360,
+          "bytes": 19948
+        },
+        {
+          "path": "media/gallery/image3.g1-720.webp",
+          "width": 720,
+          "bytes": 75294
+        },
+        {
+          "path": "media/gallery/image3.g1-720.avif",
+          "width": 720,
+          "bytes": 54796
+        },
+        {
+          "path": "media/gallery/image3.g1-1092.webp",
+          "width": 1092,
+          "bytes": 158092
+        },
+        {
+          "path": "media/gallery/image3.g1-1092.avif",
+          "width": 1092,
+          "bytes": 100092
+        }
+      ]
+    },
+    {
+      "source": "images/image3.g2.png",
+      "original_bytes": 2924581,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image3.g2-360.webp",
+          "width": 360,
+          "bytes": 31306
+        },
+        {
+          "path": "media/gallery/image3.g2-360.avif",
+          "width": 360,
+          "bytes": 20113
+        },
+        {
+          "path": "media/gallery/image3.g2-720.webp",
+          "width": 720,
+          "bytes": 101144
+        },
+        {
+          "path": "media/gallery/image3.g2-720.avif",
+          "width": 720,
+          "bytes": 70901
+        },
+        {
+          "path": "media/gallery/image3.g2-1092.webp",
+          "width": 1092,
+          "bytes": 249840
+        },
+        {
+          "path": "media/gallery/image3.g2-1092.avif",
+          "width": 1092,
+          "bytes": 150466
+        }
+      ]
+    },
+    {
+      "source": "images/image3.g3.png",
+      "original_bytes": 274448,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image3.g3-360.webp",
+          "width": 360,
+          "bytes": 21086
+        },
+        {
+          "path": "media/gallery/image3.g3-360.avif",
+          "width": 360,
+          "bytes": 17076
+        },
+        {
+          "path": "media/gallery/image3.g3-720.webp",
+          "width": 720,
+          "bytes": 54768
+        },
+        {
+          "path": "media/gallery/image3.g3-720.avif",
+          "width": 720,
+          "bytes": 45122
+        },
+        {
+          "path": "media/gallery/image3.g3-1122.webp",
+          "width": 1122,
+          "bytes": 108022
+        },
+        {
+          "path": "media/gallery/image3.g3-1122.avif",
+          "width": 1122,
+          "bytes": 79643
+        }
+      ]
+    },
+    {
+      "source": "images/image3.g4.png",
+      "original_bytes": 2744293,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image3.g4-360.webp",
+          "width": 360,
+          "bytes": 30906
+        },
+        {
+          "path": "media/gallery/image3.g4-360.avif",
+          "width": 360,
+          "bytes": 25201
+        },
+        {
+          "path": "media/gallery/image3.g4-720.webp",
+          "width": 720,
+          "bytes": 92688
+        },
+        {
+          "path": "media/gallery/image3.g4-720.avif",
+          "width": 720,
+          "bytes": 74328
+        },
+        {
+          "path": "media/gallery/image3.g4-1092.webp",
+          "width": 1092,
+          "bytes": 222298
+        },
+        {
+          "path": "media/gallery/image3.g4-1092.avif",
+          "width": 1092,
+          "bytes": 138771
+        }
+      ]
+    },
+    {
+      "source": "images/image3.g5.png",
+      "original_bytes": 2924589,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image3.g5-360.webp",
+          "width": 360,
+          "bytes": 25952
+        },
+        {
+          "path": "media/gallery/image3.g5-360.avif",
+          "width": 360,
+          "bytes": 18912
+        },
+        {
+          "path": "media/gallery/image3.g5-720.webp",
+          "width": 720,
+          "bytes": 84196
+        },
+        {
+          "path": "media/gallery/image3.g5-720.avif",
+          "width": 720,
+          "bytes": 63780
+        },
+        {
+          "path": "media/gallery/image3.g5-1122.webp",
+          "width": 1122,
+          "bytes": 220924
+        },
+        {
+          "path": "media/gallery/image3.g5-1122.avif",
+          "width": 1122,
+          "bytes": 125755
+        }
+      ]
+    },
+    {
+      "source": "images/image3.g6.png",
+      "original_bytes": 2127673,
+      "width": 1080,
+      "height": 1350,
+      "variants": [
+        {
+          "path": "media/gallery/image3.g6-360.webp",
+          "width": 360,
+          "bytes": 20820
+        },
+        {
+          "path": "media/gallery/image3.g6-360.avif",
+          "width": 360,
+          "bytes": 14426
+        },
+        {
+          "path": "media/gallery/image3.g6-720.webp",
+          "width": 720,
+          "bytes": 50418
+        },
+        {
+          "path": "media/gallery/image3.g6-720.avif",
+          "width": 720,
+          "bytes": 34263
+        },
+        {
+          "path": "media/gallery/image3.g6-1080.webp",
+          "width": 1080,
+          "bytes": 91964
+        },
+        {
+          "path": "media/gallery/image3.g6-1080.avif",
+          "width": 1080,
+          "bytes": 53188
+        }
+      ]
+    },
+    {
+      "source": "images/image4.g1.png",
+      "original_bytes": 2523804,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image4.g1-360.webp",
+          "width": 360,
+          "bytes": 25260
+        },
+        {
+          "path": "media/gallery/image4.g1-360.avif",
+          "width": 360,
+          "bytes": 18113
+        },
+        {
+          "path": "media/gallery/image4.g1-720.webp",
+          "width": 720,
+          "bytes": 68374
+        },
+        {
+          "path": "media/gallery/image4.g1-720.avif",
+          "width": 720,
+          "bytes": 47601
+        },
+        {
+          "path": "media/gallery/image4.g1-1122.webp",
+          "width": 1122,
+          "bytes": 143260
+        },
+        {
+          "path": "media/gallery/image4.g1-1122.avif",
+          "width": 1122,
+          "bytes": 85832
+        }
+      ]
+    },
+    {
+      "source": "images/image4.g2.png",
+      "original_bytes": 2480626,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image4.g2-360.webp",
+          "width": 360,
+          "bytes": 22960
+        },
+        {
+          "path": "media/gallery/image4.g2-360.avif",
+          "width": 360,
+          "bytes": 17127
+        },
+        {
+          "path": "media/gallery/image4.g2-720.webp",
+          "width": 720,
+          "bytes": 65542
+        },
+        {
+          "path": "media/gallery/image4.g2-720.avif",
+          "width": 720,
+          "bytes": 44589
+        },
+        {
+          "path": "media/gallery/image4.g2-1092.webp",
+          "width": 1092,
+          "bytes": 129574
+        },
+        {
+          "path": "media/gallery/image4.g2-1092.avif",
+          "width": 1092,
+          "bytes": 78610
+        }
+      ]
+    },
+    {
+      "source": "images/image4.g3.png",
+      "original_bytes": 315249,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image4.g3-360.webp",
+          "width": 360,
+          "bytes": 19946
+        },
+        {
+          "path": "media/gallery/image4.g3-360.avif",
+          "width": 360,
+          "bytes": 16145
+        },
+        {
+          "path": "media/gallery/image4.g3-720.webp",
+          "width": 720,
+          "bytes": 58272
+        },
+        {
+          "path": "media/gallery/image4.g3-720.avif",
+          "width": 720,
+          "bytes": 48537
+        },
+        {
+          "path": "media/gallery/image4.g3-1122.webp",
+          "width": 1122,
+          "bytes": 123076
+        },
+        {
+          "path": "media/gallery/image4.g3-1122.avif",
+          "width": 1122,
+          "bytes": 91438
+        }
+      ]
+    },
+    {
+      "source": "images/image4.g4.png",
+      "original_bytes": 2996679,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image4.g4-360.webp",
+          "width": 360,
+          "bytes": 30014
+        },
+        {
+          "path": "media/gallery/image4.g4-360.avif",
+          "width": 360,
+          "bytes": 21783
+        },
+        {
+          "path": "media/gallery/image4.g4-720.webp",
+          "width": 720,
+          "bytes": 89392
+        },
+        {
+          "path": "media/gallery/image4.g4-720.avif",
+          "width": 720,
+          "bytes": 66091
+        },
+        {
+          "path": "media/gallery/image4.g4-1092.webp",
+          "width": 1092,
+          "bytes": 194352
+        },
+        {
+          "path": "media/gallery/image4.g4-1092.avif",
+          "width": 1092,
+          "bytes": 115896
+        }
+      ]
+    },
+    {
+      "source": "images/image4.g5.png",
+      "original_bytes": 2836491,
+      "width": 1123,
+      "height": 1400,
+      "variants": [
+        {
+          "path": "media/gallery/image4.g5-360.webp",
+          "width": 360,
+          "bytes": 24768
+        },
+        {
+          "path": "media/gallery/image4.g5-360.avif",
+          "width": 360,
+          "bytes": 18715
+        },
+        {
+          "path": "media/gallery/image4.g5-720.webp",
+          "width": 720,
+          "bytes": 75618
+        },
+        {
+          "path": "media/gallery/image4.g5-720.avif",
+          "width": 720,
+          "bytes": 57338
+        },
+        {
+          "path": "media/gallery/image4.g5-1123.webp",
+          "width": 1123,
+          "bytes": 183620
+        },
+        {
+          "path": "media/gallery/image4.g5-1123.avif",
+          "width": 1123,
+          "bytes": 112822
+        }
+      ]
+    },
+    {
+      "source": "images/image4.g6.png",
+      "original_bytes": 2364315,
+      "width": 1080,
+      "height": 1350,
+      "variants": [
+        {
+          "path": "media/gallery/image4.g6-360.webp",
+          "width": 360,
+          "bytes": 21604
+        },
+        {
+          "path": "media/gallery/image4.g6-360.avif",
+          "width": 360,
+          "bytes": 15775
+        },
+        {
+          "path": "media/gallery/image4.g6-720.webp",
+          "width": 720,
+          "bytes": 54680
+        },
+        {
+          "path": "media/gallery/image4.g6-720.avif",
+          "width": 720,
+          "bytes": 37880
+        },
+        {
+          "path": "media/gallery/image4.g6-1080.webp",
+          "width": 1080,
+          "bytes": 98242
+        },
+        {
+          "path": "media/gallery/image4.g6-1080.avif",
+          "width": 1080,
+          "bytes": 59341
+        }
+      ]
+    },
+    {
+      "source": "images/image5.g1.png",
+      "original_bytes": 2313830,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image5.g1-360.webp",
+          "width": 360,
+          "bytes": 19122
+        },
+        {
+          "path": "media/gallery/image5.g1-360.avif",
+          "width": 360,
+          "bytes": 13893
+        },
+        {
+          "path": "media/gallery/image5.g1-720.webp",
+          "width": 720,
+          "bytes": 50904
+        },
+        {
+          "path": "media/gallery/image5.g1-720.avif",
+          "width": 720,
+          "bytes": 36173
+        },
+        {
+          "path": "media/gallery/image5.g1-1122.webp",
+          "width": 1122,
+          "bytes": 111432
+        },
+        {
+          "path": "media/gallery/image5.g1-1122.avif",
+          "width": 1122,
+          "bytes": 66085
+        }
+      ]
+    },
+    {
+      "source": "images/image5.g2.png",
+      "original_bytes": 2442087,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image5.g2-360.webp",
+          "width": 360,
+          "bytes": 21058
+        },
+        {
+          "path": "media/gallery/image5.g2-360.avif",
+          "width": 360,
+          "bytes": 15486
+        },
+        {
+          "path": "media/gallery/image5.g2-720.webp",
+          "width": 720,
+          "bytes": 58202
+        },
+        {
+          "path": "media/gallery/image5.g2-720.avif",
+          "width": 720,
+          "bytes": 42650
+        },
+        {
+          "path": "media/gallery/image5.g2-1092.webp",
+          "width": 1092,
+          "bytes": 120212
+        },
+        {
+          "path": "media/gallery/image5.g2-1092.avif",
+          "width": 1092,
+          "bytes": 75101
+        }
+      ]
+    },
+    {
+      "source": "images/image5.g3.png",
+      "original_bytes": 315147,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image5.g3-360.webp",
+          "width": 360,
+          "bytes": 25102
+        },
+        {
+          "path": "media/gallery/image5.g3-360.avif",
+          "width": 360,
+          "bytes": 19437
+        },
+        {
+          "path": "media/gallery/image5.g3-720.webp",
+          "width": 720,
+          "bytes": 63894
+        },
+        {
+          "path": "media/gallery/image5.g3-720.avif",
+          "width": 720,
+          "bytes": 52450
+        },
+        {
+          "path": "media/gallery/image5.g3-1122.webp",
+          "width": 1122,
+          "bytes": 124784
+        },
+        {
+          "path": "media/gallery/image5.g3-1122.avif",
+          "width": 1122,
+          "bytes": 92950
+        }
+      ]
+    },
+    {
+      "source": "images/image5.g4.png",
+      "original_bytes": 2769135,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image5.g4-360.webp",
+          "width": 360,
+          "bytes": 25958
+        },
+        {
+          "path": "media/gallery/image5.g4-360.avif",
+          "width": 360,
+          "bytes": 17960
+        },
+        {
+          "path": "media/gallery/image5.g4-720.webp",
+          "width": 720,
+          "bytes": 69586
+        },
+        {
+          "path": "media/gallery/image5.g4-720.avif",
+          "width": 720,
+          "bytes": 47210
+        },
+        {
+          "path": "media/gallery/image5.g4-1092.webp",
+          "width": 1092,
+          "bytes": 155162
+        },
+        {
+          "path": "media/gallery/image5.g4-1092.avif",
+          "width": 1092,
+          "bytes": 88303
+        }
+      ]
+    },
+    {
+      "source": "images/image5.g5.png",
+      "original_bytes": 2828577,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image5.g5-360.webp",
+          "width": 360,
+          "bytes": 21794
+        },
+        {
+          "path": "media/gallery/image5.g5-360.avif",
+          "width": 360,
+          "bytes": 15904
+        },
+        {
+          "path": "media/gallery/image5.g5-720.webp",
+          "width": 720,
+          "bytes": 58670
+        },
+        {
+          "path": "media/gallery/image5.g5-720.avif",
+          "width": 720,
+          "bytes": 40116
+        },
+        {
+          "path": "media/gallery/image5.g5-1122.webp",
+          "width": 1122,
+          "bytes": 144308
+        },
+        {
+          "path": "media/gallery/image5.g5-1122.avif",
+          "width": 1122,
+          "bytes": 71555
+        }
+      ]
+    },
+    {
+      "source": "images/image5.g6.png",
+      "original_bytes": 2107593,
+      "width": 1080,
+      "height": 1350,
+      "variants": [
+        {
+          "path": "media/gallery/image5.g6-360.webp",
+          "width": 360,
+          "bytes": 20042
+        },
+        {
+          "path": "media/gallery/image5.g6-360.avif",
+          "width": 360,
+          "bytes": 13998
+        },
+        {
+          "path": "media/gallery/image5.g6-720.webp",
+          "width": 720,
+          "bytes": 49702
+        },
+        {
+          "path": "media/gallery/image5.g6-720.avif",
+          "width": 720,
+          "bytes": 33219
+        },
+        {
+          "path": "media/gallery/image5.g6-1080.webp",
+          "width": 1080,
+          "bytes": 90320
+        },
+        {
+          "path": "media/gallery/image5.g6-1080.avif",
+          "width": 1080,
+          "bytes": 51472
+        }
+      ]
+    },
+    {
+      "source": "images/image6.g1.png",
+      "original_bytes": 2311179,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image6.g1-360.webp",
+          "width": 360,
+          "bytes": 17816
+        },
+        {
+          "path": "media/gallery/image6.g1-360.avif",
+          "width": 360,
+          "bytes": 11946
+        },
+        {
+          "path": "media/gallery/image6.g1-720.webp",
+          "width": 720,
+          "bytes": 50326
+        },
+        {
+          "path": "media/gallery/image6.g1-720.avif",
+          "width": 720,
+          "bytes": 32927
+        },
+        {
+          "path": "media/gallery/image6.g1-1092.webp",
+          "width": 1092,
+          "bytes": 109946
+        },
+        {
+          "path": "media/gallery/image6.g1-1092.avif",
+          "width": 1092,
+          "bytes": 56741
+        }
+      ]
+    },
+    {
+      "source": "images/image6.g2.png",
+      "original_bytes": 2440486,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image6.g2-360.webp",
+          "width": 360,
+          "bytes": 25936
+        },
+        {
+          "path": "media/gallery/image6.g2-360.avif",
+          "width": 360,
+          "bytes": 17414
+        },
+        {
+          "path": "media/gallery/image6.g2-720.webp",
+          "width": 720,
+          "bytes": 63932
+        },
+        {
+          "path": "media/gallery/image6.g2-720.avif",
+          "width": 720,
+          "bytes": 41710
+        },
+        {
+          "path": "media/gallery/image6.g2-1122.webp",
+          "width": 1122,
+          "bytes": 121610
+        },
+        {
+          "path": "media/gallery/image6.g2-1122.avif",
+          "width": 1122,
+          "bytes": 68155
+        }
+      ]
+    },
+    {
+      "source": "images/image6.g3.png",
+      "original_bytes": 306583,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image6.g3-360.webp",
+          "width": 360,
+          "bytes": 13104
+        },
+        {
+          "path": "media/gallery/image6.g3-360.avif",
+          "width": 360,
+          "bytes": 11719
+        },
+        {
+          "path": "media/gallery/image6.g3-720.webp",
+          "width": 720,
+          "bytes": 37064
+        },
+        {
+          "path": "media/gallery/image6.g3-720.avif",
+          "width": 720,
+          "bytes": 32296
+        },
+        {
+          "path": "media/gallery/image6.g3-1122.webp",
+          "width": 1122,
+          "bytes": 86390
+        },
+        {
+          "path": "media/gallery/image6.g3-1122.avif",
+          "width": 1122,
+          "bytes": 62801
+        }
+      ]
+    },
+    {
+      "source": "images/image6.g4.png",
+      "original_bytes": 2725894,
+      "width": 1092,
+      "height": 1440,
+      "variants": [
+        {
+          "path": "media/gallery/image6.g4-360.webp",
+          "width": 360,
+          "bytes": 30318
+        },
+        {
+          "path": "media/gallery/image6.g4-360.avif",
+          "width": 360,
+          "bytes": 21858
+        },
+        {
+          "path": "media/gallery/image6.g4-720.webp",
+          "width": 720,
+          "bytes": 87704
+        },
+        {
+          "path": "media/gallery/image6.g4-720.avif",
+          "width": 720,
+          "bytes": 62348
+        },
+        {
+          "path": "media/gallery/image6.g4-1092.webp",
+          "width": 1092,
+          "bytes": 189052
+        },
+        {
+          "path": "media/gallery/image6.g4-1092.avif",
+          "width": 1092,
+          "bytes": 113016
+        }
+      ]
+    },
+    {
+      "source": "images/image6.g5.png",
+      "original_bytes": 3112946,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image6.g5-360.webp",
+          "width": 360,
+          "bytes": 27912
+        },
+        {
+          "path": "media/gallery/image6.g5-360.avif",
+          "width": 360,
+          "bytes": 20399
+        },
+        {
+          "path": "media/gallery/image6.g5-720.webp",
+          "width": 720,
+          "bytes": 76370
+        },
+        {
+          "path": "media/gallery/image6.g5-720.avif",
+          "width": 720,
+          "bytes": 52566
+        },
+        {
+          "path": "media/gallery/image6.g5-1122.webp",
+          "width": 1122,
+          "bytes": 176040
+        },
+        {
+          "path": "media/gallery/image6.g5-1122.avif",
+          "width": 1122,
+          "bytes": 97465
+        }
+      ]
+    },
+    {
+      "source": "images/image6.g6.png",
+      "original_bytes": 2581716,
+      "width": 1003,
+      "height": 1568,
+      "variants": [
+        {
+          "path": "media/gallery/image6.g6-360.webp",
+          "width": 360,
+          "bytes": 27844
+        },
+        {
+          "path": "media/gallery/image6.g6-360.avif",
+          "width": 360,
+          "bytes": 20590
+        },
+        {
+          "path": "media/gallery/image6.g6-720.webp",
+          "width": 720,
+          "bytes": 79518
+        },
+        {
+          "path": "media/gallery/image6.g6-720.avif",
+          "width": 720,
+          "bytes": 60400
+        },
+        {
+          "path": "media/gallery/image6.g6-1003.webp",
+          "width": 1003,
+          "bytes": 145502
+        },
+        {
+          "path": "media/gallery/image6.g6-1003.avif",
+          "width": 1003,
+          "bytes": 97000
+        }
+      ]
+    },
+    {
+      "source": "images/image7.g5.png",
+      "original_bytes": 2821360,
+      "width": 1122,
+      "height": 1402,
+      "variants": [
+        {
+          "path": "media/gallery/image7.g5-360.webp",
+          "width": 360,
+          "bytes": 26370
+        },
+        {
+          "path": "media/gallery/image7.g5-360.avif",
+          "width": 360,
+          "bytes": 20058
+        },
+        {
+          "path": "media/gallery/image7.g5-720.webp",
+          "width": 720,
+          "bytes": 81740
+        },
+        {
+          "path": "media/gallery/image7.g5-720.avif",
+          "width": 720,
+          "bytes": 57494
+        },
+        {
+          "path": "media/gallery/image7.g5-1122.webp",
+          "width": 1122,
+          "bytes": 221852
+        },
+        {
+          "path": "media/gallery/image7.g5-1122.avif",
+          "width": 1122,
+          "bytes": 128277
+        }
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "source": "media/videos/reel1.mp4",
+      "path": "media/videos/reel1-display.mp4",
+      "before": 4326180,
+      "after": 2722862,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640032",
+            "width": 1080,
+            "height": 1920,
+            "coded_width": 1080,
+            "coded_height": 1920,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 50,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 69632,
+            "duration": "4.533333",
+            "bit_rate": "4681282",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "136",
+            "extradata_size": 50,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "Core Media Video",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 1652,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 199626,
+            "duration": "4.526667",
+            "bit_rate": "111844",
+            "nb_frames": "197",
+            "extradata_size": 2,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "Core Media Audio"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/alnaqeeb/Desktop/my 1 web/media/videos/reel1-display.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "4.533333",
+          "size": "2722862",
+          "bit_rate": "4805050",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "source": "media/videos/reel2.mp4",
+      "path": "media/videos/reel2-display.mp4",
+      "before": 1494304,
+      "after": 1098611,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640033",
+            "width": 940,
+            "height": 1672,
+            "coded_width": 940,
+            "coded_height": 1672,
+            "has_b_frames": 2,
+            "pix_fmt": "yuvj420p",
+            "level": 51,
+            "color_range": "pc",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "150/1",
+            "avg_frame_rate": "11550/379",
+            "time_base": "1/19200",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 48512,
+            "duration": "2.526667",
+            "bit_rate": "3472572",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "77",
+            "extradata_size": 50,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "Core Media Video",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/alnaqeeb/Desktop/my 1 web/media/videos/reel2-display.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "2.526667",
+          "size": "1098611",
+          "bit_rate": "3478451",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    },
+    {
+      "source": "media/videos/reel3.mp4",
+      "path": "media/videos/reel3-display.mp4",
+      "before": 5659830,
+      "after": 3454934,
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640032",
+            "width": 1080,
+            "height": 1920,
+            "coded_width": 1080,
+            "coded_height": 1920,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 50,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "color_transfer": "bt709",
+            "color_primaries": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 77824,
+            "duration": "5.066667",
+            "bit_rate": "5330884",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "152",
+            "extradata_size": 50,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "Core Media Video",
+              "encoder": "Lavc63.1.101 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 1304,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 223367,
+            "duration": "5.065011",
+            "bit_rate": "112548",
+            "nb_frames": "220",
+            "extradata_size": 2,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "Core Media Audio"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/Users/alnaqeeb/Desktop/my 1 web/media/videos/reel3-display.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "5.066667",
+          "size": "3454934",
+          "bit_rate": "5455158",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf63.1.101"
+          }
+        }
+      }
+    }
+  ]
+}
